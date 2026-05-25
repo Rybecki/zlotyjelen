@@ -1,5 +1,7 @@
 export const SITE = {
   name: 'Złoty Jeleń',
+  url: 'https://zlotyjelen.pl',
+  ogImage: '/images/og.png',
   tagline: 'restauracja i dom gościnny',
   address: 'Złoty Potok, woj. śląskie',
   addressFull: 'Złoty Potok, Jura Krakowsko-Częstochowska',
