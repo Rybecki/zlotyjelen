@@ -64,7 +64,43 @@
     grid-template-columns: 1fr;
   }
 
+  .about__text {
+    text-align: center;
+  }
+
+  .about__text .section__eyebrow,
+  .about__text .section__title {
+    text-align: center;
+  }
+
   .about__features {
     grid-template-columns: 1fr;
+    justify-items: center;
+    max-width: 320px;
+    margin-inline: auto;
+  }
+
+  .about__features li {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .about__features li::before {
+    position: static;
+    display: inline-block;
+    margin-right: 0.4rem;
+    vertical-align: middle;
+  }
+
+  .about__actions {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .about__actions .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
   }
 }

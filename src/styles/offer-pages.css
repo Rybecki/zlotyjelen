@@ -408,5 +408,23 @@
 
   .contact-page-grid {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .contact-page-grid .section__title {
+    text-align: center;
+  }
+
+  .contact-page-grid address {
+    text-align: center;
+  }
+
+  .contact-form {
+    margin-inline: auto;
+  }
+
+  .contact-page-grid .btn {
+    margin-inline: auto;
+    display: inline-flex;
   }
 }

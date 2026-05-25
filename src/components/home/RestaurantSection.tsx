@@ -16,7 +16,7 @@ export function RestaurantSection() {
   return (
     <section className="section restaurant section--dark" id="restauracja" aria-labelledby="restaurant-title">
       <div className="container restaurant__grid fade-in">
-        <div className="restaurant__content">
+        <div className="restaurant__intro">
           <span className="section__eyebrow">Restauracja</span>
           <h2 id="restaurant-title" className="section__title">
             Regionalna kuchnia z sercem Jury
@@ -29,14 +29,6 @@ export function RestaurantSection() {
             Restauracja pomieści ponad 120 osób. Organizujemy przyjęcia okolicznościowe, komunię,
             chrzciny, jubileusze oraz wieczory kawalerskie i panieńskie.
           </p>
-          <div className="restaurant__actions">
-            <Button to="/menu" variant="primary">
-              Sprawdź menu restauracji
-            </Button>
-            <Button to="/kontakt" variant="outline">
-              Rezerwacja stolika
-            </Button>
-          </div>
         </div>
         <div className="restaurant__gallery">
           {photos.map((photo) => (
@@ -44,6 +36,14 @@ export function RestaurantSection() {
               <img src={photo.src} alt={photo.alt} loading="lazy" width={800} height={500} />
             </figure>
           ))}
+        </div>
+        <div className="restaurant__actions">
+          <Button to="/menu" variant="primary">
+            Sprawdź menu restauracji
+          </Button>
+          <Button to="/kontakt" variant="outline">
+            Rezerwacja stolika
+          </Button>
         </div>
       </div>
     </section>

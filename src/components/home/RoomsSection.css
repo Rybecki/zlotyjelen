@@ -10,6 +10,7 @@
   flex-direction: column;
   height: 100%;
   background: var(--color-warm-white);
+  border: 1px solid rgba(212, 184, 118, 0.55);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-soft);
@@ -119,6 +120,24 @@
 @media (max-width: 1100px) {
   .rooms-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .rooms-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .room-card__body {
+    text-align: center;
+  }
+
+  .room-card__body h3 {
+    text-align: center;
+  }
+
+  .room-card__amenities {
+    justify-content: center;
   }
 }
 

@@ -30,6 +30,14 @@ export function HeroSection() {
       </div>
       <div className="hero__overlay" />
       <div className="hero__content container fade-in visible">
+        <img
+          src="/images/logo.png"
+          alt=""
+          className="hero__logo"
+          width={360}
+          height={180}
+          aria-hidden="true"
+        />
         <p className="hero__eyebrow">Złoty Potok · Jura Krakowsko-Częstochowska</p>
         <h1>Wypoczynek w sercu Jury Krakowsko-Częstochowskiej</h1>
         <p className="hero__subtitle">

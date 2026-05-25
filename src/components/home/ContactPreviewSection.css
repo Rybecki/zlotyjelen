@@ -40,5 +40,20 @@
 @media (max-width: 768px) {
   .contact-preview__grid {
     grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .contact-preview__lead {
+    text-align: center !important;
+  }
+
+  .contact-preview__grid .section__eyebrow,
+  .contact-preview__grid .section__title {
+    text-align: center;
+  }
+
+  .contact-preview__grid .btn {
+    margin-inline: auto;
+    display: inline-flex;
   }
 }

@@ -95,7 +95,7 @@ export function ContactPage() {
             <div className="contact-preview__map" style={{ marginTop: '1.5rem' }}>
               <iframe
                 title="Lokalizacja Złoty Jeleń – Złoty Potok"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2528.5!2d19.424!3d50.632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716c8b8c8c8c8c9%3A0x0!2zWcWCb3R5IFBvdG9r!5e0!3m2!1spl!2spl!4v1"
+                src={SITE.mapEmbed}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 allowFullScreen
