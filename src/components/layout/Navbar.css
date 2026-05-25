@@ -6,13 +6,14 @@
   z-index: 1000;
   height: var(--nav-height);
   transition: background var(--transition), box-shadow var(--transition);
-  background: rgba(30, 58, 47, 0.92);
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid var(--color-beige);
   overflow: visible;
 }
 
 .navbar--scrolled,
 .navbar--menu-open {
-  background: rgba(30, 58, 47, 0.98);
+  background: rgba(255, 255, 255, 0.98);
   box-shadow: var(--shadow-nav);
 }
 
@@ -49,14 +50,14 @@
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--color-warm-white);
+  color: var(--color-forest);
   transition: color var(--transition);
 }
 
 .navbar__nav a:hover,
 .navbar__nav a.active,
 .navbar__dropdown-trigger:hover {
-  color: var(--color-gold-light);
+  color: var(--color-gold-dark);
 }
 
 .navbar__dropdown {
@@ -128,7 +129,7 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--color-warm-white);
+  background: var(--color-forest);
   transition: var(--transition);
   transform-origin: center;
 }
@@ -168,7 +169,7 @@
   align-items: stretch;
   gap: 0;
   padding: 1.25rem 1.5rem 2rem;
-  background: var(--color-forest);
+  background: var(--color-warm-white);
   transform: translateX(100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-x: hidden;
@@ -194,13 +195,13 @@
   }
 
   .navbar__nav--mobile > a {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--color-beige);
   }
 
   .navbar__nav--mobile .navbar__dropdown {
     flex-shrink: 0;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid var(--color-beige);
   }
 
   .navbar__nav--mobile .navbar__dropdown-trigger {
@@ -219,7 +220,7 @@
     opacity: 1;
     visibility: visible;
     box-shadow: none;
-    background: rgba(0, 0, 0, 0.15);
+    background: var(--color-surface-warm);
     margin: 0 0 0.5rem;
     padding: 0.25rem 0;
     display: none;
@@ -231,7 +232,7 @@
   }
 
   .navbar__nav--mobile .navbar__dropdown-menu a {
-    color: var(--color-cream);
+    color: var(--color-text-muted);
     padding: 0.75rem 1rem;
   }
 

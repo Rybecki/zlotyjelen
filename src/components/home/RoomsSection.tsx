@@ -35,7 +35,7 @@ export function RoomsSection() {
                 </ul>
                 <Button
                   to="/oferta/pokoje"
-                  variant={room.capacity === 2 || room.capacity === 4 ? 'outline' : 'ghost'}
+                  variant={room.capacity === 2 || room.capacity === 4 ? 'outline' : 'outline-dark'}
                   className="room-card__btn"
                 >
                   Zobacz więcej

@@ -27,6 +27,11 @@
   margin-bottom: var(--space-sm);
 }
 
+.about__text p strong {
+  color: var(--color-forest);
+  font-weight: 600;
+}
+
 .about__features {
   display: grid;
   grid-template-columns: 1fr 1fr;

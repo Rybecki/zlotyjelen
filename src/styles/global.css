@@ -84,13 +84,13 @@ h4 {
 }
 
 .section--dark {
-  background: var(--color-forest);
-  color: var(--color-cream);
+  background: var(--color-surface-warm);
+  color: var(--color-text);
 }
 
 .section--dark h2,
 .section--dark h3 {
-  color: var(--color-gold-light);
+  color: var(--color-forest);
 }
 
 .section__header {
@@ -123,7 +123,7 @@ h4 {
 }
 
 .section--dark .section__subtitle {
-  color: rgba(250, 247, 242, 0.85);
+  color: var(--color-text-muted);
 }
 
 .btn {
@@ -193,8 +193,8 @@ h4 {
 .page-hero {
   position: relative;
   padding-block: calc(var(--nav-height) + var(--space-xl)) var(--space-xl);
-  background: var(--color-forest);
-  color: var(--color-cream);
+  background: var(--color-surface-warm);
+  color: var(--color-text);
   overflow: hidden;
 }
 
@@ -211,8 +211,8 @@ h4 {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(30, 58, 47, 0.92) 0%,
-    rgba(30, 58, 47, 0.75) 100%
+    rgba(var(--color-accent-rgb), 0.35) 0%,
+    rgba(250, 248, 245, 0.55) 100%
   );
 }
 
@@ -224,7 +224,7 @@ h4 {
 
 .page-hero h1 {
   font-size: clamp(2.25rem, 5vw, 3.25rem);
-  color: var(--color-gold-light);
+  color: var(--color-forest);
   margin-bottom: var(--space-sm);
 }
 

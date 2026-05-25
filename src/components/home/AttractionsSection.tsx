@@ -36,7 +36,7 @@ export function AttractionsSection() {
         </div>
 
         <div className="attractions__cta fade-in">
-          <Button to="/atrakcje" variant="outline">
+          <Button to="/atrakcje" variant="outline-dark">
             Zobacz wszystkie atrakcje
           </Button>
         </div>

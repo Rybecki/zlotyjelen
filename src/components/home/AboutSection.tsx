@@ -21,16 +21,19 @@ export function AboutSection() {
           </h2>
           <p>
             Złoty Jeleń to wyjątkowe miejsce w Złotym Potoku, w samym sercu Rezerwatu Przyrody
-            Parkowe na Jurze Krakowsko-Częstochowskiej. Łączymy komfortowy wypoczynek z
+            Parkowe na Jurze Krakowsko-Częstochowskiej. Dysponujemy <strong>95 miejscami</strong>{' '}
+            noclegowymi w <strong>25 pokojach</strong> gościnnych. Łączymy komfortowy wypoczynek z
             autentyczną, regionalną kuchnią opartą na lokalnych produktach i dziczyźnie.
           </p>
           <p>
             Spokojna lokalizacja, bliskość szlaków i atrakcji turystycznych sprawiają, że jesteśmy
-            idealnym wyborem dla rodzin, grup zorganizowanych, wycieczek szkolnych oraz turystów
-            pragnących odkrywać piękno Jury.
+            idealnym wyborem dla rodzin, <strong>grup zorganizowanych</strong>,{' '}
+            <strong>wycieczek szkolnych</strong> oraz <strong>turystów</strong> pragnących odkrywać
+            piękno Jury.
           </p>
           <ul className="about__features">
             <li>Spokojna lokalizacja w rezerwacie</li>
+            <li>25 pokoi, 95 miejsc noclegowych</li>
             <li>Pokoje z prywatnymi łazienkami</li>
             <li>Restauracja ponad 120 miejsc</li>
             <li>Regionalna kuchnia z dziczyzny</li>

@@ -9,15 +9,16 @@
   gap: var(--space-md);
   align-items: flex-start;
   padding: var(--space-md);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(212, 184, 118, 0.22);
+  background: var(--color-warm-white);
+  border: 1px solid var(--color-beige-dark);
+  box-shadow: var(--shadow-soft);
   border-radius: var(--radius-lg);
   transition: var(--transition);
 }
 
 .attraction-card:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(212, 184, 118, 0.4);
+  background: var(--color-warm-white);
+  border-color: var(--color-gold);
   transform: translateY(-3px);
 }
 
@@ -42,11 +43,11 @@
 .attraction-card__text h3 {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: var(--color-gold-light);
+  color: var(--color-forest);
 }
 
 .attraction-card__text p {
-  color: rgba(250, 247, 242, 0.88);
+  color: var(--color-text-muted);
   font-size: 0.95rem;
   line-height: 1.6;
 }

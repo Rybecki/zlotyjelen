@@ -41,7 +41,7 @@ export function RestaurantSection() {
           <Button to="/menu" variant="primary">
             Sprawdź menu restauracji
           </Button>
-          <Button to="/kontakt" variant="outline">
+          <Button to="/kontakt" variant="outline-dark">
             Rezerwacja stolika
           </Button>
         </div>

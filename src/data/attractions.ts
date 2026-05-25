@@ -41,6 +41,39 @@ export const nearbyAttractions: Attraction[] = [
 
 export type AttractionIconId = 'trail' | 'castle' | 'nature' | 'activity';
 
+export const attractionSliderPhotos = [
+  {
+    src: '/images/attraction-parkowe.png',
+    alt: 'Rezerwat przyrody Parkowe – skałki i lasy w okolicy Złotego Potoku',
+    caption: 'Rezerwat przyrody Parkowe',
+  },
+  {
+    src: '/images/attraction-mlyn.png',
+    alt: 'Muzeum Dawnych Rzemiosł – Młyn w Złotym Potoku',
+    caption: 'Muzeum Dawnych Rzemiosł – Młyn',
+  },
+  {
+    src: '/images/attraction-ogrodzieniec.png',
+    alt: 'Ruiny zamku Ogrodzieniec na Szlaku Orlich Gniazd',
+    caption: 'Zamek Ogrodzieniec',
+  },
+  {
+    src: '/images/attraction-olsztyn.png',
+    alt: 'Ruiny zamku w Olsztynie na Jurze Krakowsko-Częstochowskiej',
+    caption: 'Zamek w Olsztynie',
+  },
+  {
+    src: '/images/attraction-mirow.png',
+    alt: 'Ruiny zamku Mirów wapiennym wzgórzu',
+    caption: 'Zamek Mirów',
+  },
+  {
+    src: '/images/attraction-bobolice.png',
+    alt: 'Zamek Bobolice – malownicza warownia w Jurze',
+    caption: 'Zamek Bobolice',
+  },
+] as const;
+
 export const juraHighlights: {
   title: string;
   text: string;
