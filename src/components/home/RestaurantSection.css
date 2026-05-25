@@ -1,0 +1,142 @@
+.restaurant__grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(0, 1.15fr);
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+.restaurant__content p:not(.section__subtitle) {
+  opacity: 0.9;
+  margin-bottom: var(--space-sm);
+}
+
+.restaurant__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-md);
+}
+
+.restaurant__gallery {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 0;
+  min-width: 0;
+  padding: 1.25rem 0 0.5rem;
+}
+
+.restaurant__photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(212, 184, 118, 0.45);
+  outline: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.28);
+  background: var(--color-forest);
+}
+
+.restaurant__photo:first-child {
+  position: relative;
+  z-index: 2;
+  transform: translateY(-1.25rem);
+  margin-right: -22%;
+}
+
+.restaurant__photo:last-child {
+  position: relative;
+  z-index: 1;
+  margin-top: 1.75rem;
+}
+
+.restaurant__photo img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.restaurant__photo:hover img {
+  transform: scale(1.03);
+}
+
+@media (max-width: 1100px) and (min-width: 769px) {
+  .restaurant__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .restaurant__gallery {
+    grid-template-columns: 1fr;
+    padding-top: 0;
+  }
+
+  .restaurant__photo:first-child {
+    transform: translateY(-0.75rem);
+    margin-right: 0;
+    margin-bottom: -3.5rem;
+    width: 92%;
+  }
+
+  .restaurant__photo:last-child {
+    margin-top: 0;
+    margin-left: auto;
+    width: 88%;
+  }
+}
+
+@media (max-width: 768px) {
+  .restaurant__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .restaurant__gallery {
+    order: -1;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    padding: 0.75rem 0 0;
+  }
+
+  .restaurant__photo {
+    border-radius: var(--radius-md);
+  }
+
+  .restaurant__photo:first-child {
+    transform: translateY(-0.65rem);
+    margin-right: -20%;
+  }
+
+  .restaurant__photo:last-child {
+    margin-top: 1.25rem;
+  }
+
+  .restaurant__photo img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 520px) {
+  .restaurant__gallery {
+    grid-template-columns: 1fr;
+    padding-bottom: 1rem;
+  }
+
+  .restaurant__photo:first-child {
+    width: 100%;
+    margin-bottom: -2.5rem;
+    transform: translateY(0);
+  }
+
+  .restaurant__photo:last-child {
+    width: 94%;
+    margin-left: auto;
+    margin-top: 0;
+  }
+
+  .restaurant__photo img {
+    aspect-ratio: 16 / 10;
+  }
+}

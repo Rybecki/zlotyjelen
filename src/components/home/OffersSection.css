@@ -1,0 +1,56 @@
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.offer-box {
+  display: block;
+  padding: var(--space-lg);
+  background: var(--color-warm-white);
+  border: 1px solid var(--color-beige);
+  border-radius: var(--radius-lg);
+  transition: var(--transition);
+  box-shadow: var(--shadow-soft);
+}
+
+.offer-box:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.offer-box__num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-gold);
+  opacity: 0.5;
+  display: block;
+  margin-bottom: var(--space-xs);
+  line-height: 1;
+}
+
+.offer-box h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--space-xs);
+}
+
+.offer-box p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: var(--space-md);
+}
+
+.offer-box__link {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+}
+
+@media (max-width: 900px) {
+  .offers-grid {
+    grid-template-columns: 1fr;
+  }
+}

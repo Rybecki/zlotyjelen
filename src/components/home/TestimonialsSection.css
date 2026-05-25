@@ -1,0 +1,74 @@
+.testimonial-slider {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.testimonial-slider__quote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--color-cream);
+  margin-bottom: var(--space-md);
+}
+
+.testimonial-slider__quote cite {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-gold-light);
+  display: block;
+}
+
+.testimonial-slider__quote span {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.testimonial-slider__stars {
+  color: var(--color-gold);
+  margin-top: 0.5rem;
+  letter-spacing: 0.15em;
+}
+
+.testimonial-slider__nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.testimonial-slider__nav > button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  color: var(--color-cream);
+  font-size: 1.25rem;
+  transition: var(--transition);
+}
+
+.testimonial-slider__nav > button:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.testimonial-slider__dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.testimonial-slider__dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: var(--transition);
+}
+
+.testimonial-slider__dots button.active {
+  background: var(--color-gold);
+  width: 24px;
+  border-radius: 4px;
+}
