@@ -1,5 +1,7 @@
 import { PageHero } from '../components/ui/PageHero';
 import { Button } from '../components/ui/Button';
+import { PageDeerBackdrop } from '../components/ui/PageDeerBackdrop';
+import { ProgramGallery } from '../components/ui/ProgramGallery';
 import { SITE } from '../data/site';
 import '../styles/offer-pages.css';
 
@@ -33,6 +35,29 @@ const packages = [
     desc: 'Śniadania, obiady i kolacja bazująca na lokalnych produktach.',
     weekday: '149 zł/os.',
     weekend: '159 zł/os.',
+  },
+];
+
+const programAGallery = [
+  {
+    src: '/images/school-ogrodzieniec.png',
+    alt: 'Ruiny Zamku Ogrodzieniec na Jurze',
+    caption: 'Zamek Ogrodzieniec',
+  },
+  {
+    src: '/images/school-zloty-jelen.png',
+    alt: 'Dom Gościnny Złoty Jeleń – obiad i zakwaterowanie',
+    caption: 'Złoty Jeleń',
+  },
+  {
+    src: '/images/school-parkowe.png',
+    alt: 'Rezerwat przyrody Parkowe – skałki i las',
+    caption: 'Rezerwat „PARKOWE”',
+  },
+  {
+    src: '/images/school-ognisko.png',
+    alt: 'Kolacja przy ognisku',
+    caption: 'Ognisko wieczorem',
   },
 ];
 
@@ -71,13 +96,13 @@ const programB = {
 
 export function SchoolTripsPage() {
   return (
-    <>
+    <PageDeerBackdrop>
       <PageHero
         title="Oferta dla wycieczek szkolnych"
         subtitle="Edukacja, natura i komfortowy pobyt w sercu Jury"
         image="/images/hero-day.png"
       />
-      <section className="section deer-watermark">
+      <section className="section">
         <div className="container">
           <div className="content-block fade-in">
             <h2>Dla grup wycieczkowych zapewniamy</h2>
@@ -116,22 +141,25 @@ export function SchoolTripsPage() {
 
           <div className="content-block fade-in">
             <h2>Propozycje programów 2-dniowych</h2>
-            <h3>Program I – Zamek Ogrodzieniec</h3>
-            <div className="program-day">
-              <h4>Dzień pierwszy</h4>
-              <ul>
-                {programA.day1.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="program-day">
-              <h4>Dzień drugi</h4>
-              <ul>
-                {programA.day2.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+            <div className="program-block">
+              <h3>Program I – Zamek Ogrodzieniec</h3>
+              <div className="program-day">
+                <h4>Dzień pierwszy</h4>
+                <ul>
+                  {programA.day1.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="program-day">
+                <h4>Dzień drugi</h4>
+                <ul>
+                  {programA.day2.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <ProgramGallery photos={programAGallery} />
             </div>
 
             <h3>Program II – Zamek Olsztyn</h3>
@@ -173,6 +201,6 @@ export function SchoolTripsPage() {
           </div>
         </div>
       </section>
-    </>
+    </PageDeerBackdrop>
   );
 }

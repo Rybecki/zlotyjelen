@@ -201,6 +201,103 @@
   margin-bottom: 0.5rem;
 }
 
+.program-block {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-beige);
+}
+
+.program-block:last-of-type {
+  border-bottom: none;
+}
+
+.program-block > h3 {
+  margin-top: 0;
+}
+
+.program-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-sm);
+  margin: var(--space-md) 0;
+}
+
+.program-gallery__item {
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-beige-dark);
+  box-shadow: var(--shadow-soft);
+  background: var(--color-warm-white);
+}
+
+.program-gallery__trigger {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: none;
+  cursor: zoom-in;
+  overflow: hidden;
+  background: var(--color-forest);
+}
+
+.program-gallery__trigger img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+.program-gallery__trigger:hover img,
+.program-gallery__trigger:focus-visible img {
+  transform: scale(1.04);
+  opacity: 0.92;
+}
+
+.program-gallery__zoom {
+  position: absolute;
+  right: 0.65rem;
+  bottom: 0.65rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(30, 58, 47, 0.75);
+  color: var(--color-gold-light);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1;
+  pointer-events: none;
+  transition: var(--transition);
+}
+
+.program-gallery__trigger:hover .program-gallery__zoom,
+.program-gallery__trigger:focus-visible .program-gallery__zoom {
+  background: var(--color-gold);
+  color: var(--color-forest);
+}
+
+.program-gallery__item figcaption {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-forest);
+  background: var(--color-cream);
+  border-top: 1px solid var(--color-beige);
+}
+
+@media (max-width: 600px) {
+  .program-gallery {
+    grid-template-columns: 1fr;
+  }
+}
+
 .attractions-table-wrap {
   overflow-x: auto;
   margin: var(--space-md) 0;
