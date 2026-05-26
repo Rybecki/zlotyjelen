@@ -27,7 +27,9 @@ export function TestimonialsSection() {
 
         <div className="testimonial-slider">
           <blockquote className="testimonial-slider__quote">
-            <p>&ldquo;{current.text}&rdquo;</p>
+            <div className="testimonial-slider__body">
+              <p>&ldquo;{current.text}&rdquo;</p>
+            </div>
             <footer>
               <cite>{current.author}</cite>
               <span>{current.location}</span>
