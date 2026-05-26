@@ -15,7 +15,7 @@ export const SITE = {
     breakfast: 'Śniadanie: 8:00–10:00 (dla gości)',
   },
   social: {
-    facebook: 'https://www.facebook.com/',
+    facebook: 'https://www.facebook.com/zlotyjelen',
   },
   /** Współrzędne z mapy na stronie głównej / kontakt */
   coordinates: {

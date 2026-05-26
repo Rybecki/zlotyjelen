@@ -53,17 +53,34 @@
 }
 
 .footer__links a,
-.footer__contact a,
-.footer__social a {
+.footer__contact a {
   color: var(--color-text-muted);
   font-size: 0.95rem;
   transition: color var(--transition);
 }
 
 .footer__links a:hover,
-.footer__contact a:hover,
-.footer__social a:hover {
+.footer__contact a:hover {
   color: var(--color-gold-dark);
+}
+
+.footer__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  transition:
+    color var(--transition),
+    transform var(--transition);
+}
+
+.footer__social-link:hover {
+  color: var(--color-gold-light);
+  transform: scale(1.08);
+}
+
+.footer__facebook-icon {
+  display: block;
 }
 
 .footer__links li + li,
