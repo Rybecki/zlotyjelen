@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { testimonials } from '../../data/testimonials';
+import { testimonials, GOOGLE_REVIEWS_URL } from '../../data/testimonials';
 import './TestimonialsSection.css';
 
 export function TestimonialsSection() {
@@ -17,6 +17,12 @@ export function TestimonialsSection() {
           <h2 id="testimonials-title" className="section__title">
             Co mówią nasi goście
           </h2>
+          <p className="section__subtitle">
+            Opinie gości z{' '}
+            <a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer">
+              Google
+            </a>
+          </p>
         </header>
 
         <div className="testimonial-slider">

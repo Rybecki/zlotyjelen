@@ -1,3 +1,14 @@
+.testimonials .section__subtitle a {
+  color: var(--color-gold-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.testimonials .section__subtitle a:hover {
+  color: var(--color-gold);
+}
+
 .testimonial-slider {
   max-width: 720px;
   margin-inline: auto;
@@ -6,11 +17,13 @@
 
 .testimonial-slider__quote p {
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 3vw, 1.65rem);
+  font-size: clamp(1.05rem, 2.5vw, 1.35rem);
   font-style: italic;
-  line-height: 1.6;
+  line-height: 1.65;
   color: var(--color-forest);
   margin-bottom: var(--space-md);
+  max-height: 14em;
+  overflow-y: auto;
 }
 
 .testimonial-slider__quote cite {
