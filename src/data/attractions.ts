@@ -21,10 +21,34 @@ export const attractionCategories = [
 
 export const nearbyAttractions: Attraction[] = [
   {
-    name: 'Staw Sen Nocy Letniej, Źródło Spełnionych Marzeń, Młyn Kołaczew, Grota Niedźwiedzia',
+    name: 'Rezerwat przyrody Parkowe',
     category: 'Rezerwat przyrody',
     distance: '0 km',
     mapsDestination: 'Rezerwat Przyrody Parkowe, Złoty Potok',
+  },
+  {
+    name: 'Staw Sen nocy letniej',
+    category: 'Rezerwat przyrody',
+    distance: '0,2 km',
+    mapsDestination: 'Staw Sen Nocy Letniej, Złoty Potok',
+  },
+  {
+    name: 'Grota Niedźwiedzia',
+    category: 'Rezerwat przyrody',
+    distance: '0,3 km',
+    mapsDestination: { lat: 50.69728, lng: 19.41742 },
+  },
+  {
+    name: 'Młyn Kołaczew',
+    category: 'Zabytki',
+    distance: '0,7 km',
+    mapsDestination: 'Młyn Kołaczew, Złoty Potok',
+  },
+  {
+    name: 'Źródła Zygmunta i Elżbiety',
+    category: 'Zabytki',
+    distance: '1,2 km',
+    mapsDestination: 'Źródło Elżbiety i Zygmunta, Złoty Potok',
   },
   {
     name: 'Jurajski Park Linowy',
@@ -32,12 +56,6 @@ export const nearbyAttractions: Attraction[] = [
     distance: '1,2 km',
     mapsDestination: { lat: 50.705833, lng: 19.409722 },
     url: 'https://www.jurajskiparklinowy.eu',
-  },
-  {
-    name: 'Źródło Elżbiety i Zygmunta',
-    category: 'Zabytki',
-    distance: '1,4 km',
-    mapsDestination: 'Źródło Elżbiety i Zygmunta, Złoty Potok',
   },
   {
     name: 'Pałac Raczyńskich',

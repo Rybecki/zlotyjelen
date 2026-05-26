@@ -112,6 +112,14 @@
   margin-left: 0.5rem;
   padding: 0.65rem 1.25rem !important;
   font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  color: var(--color-warm-white) !important;
+  white-space: nowrap;
+}
+
+.navbar__cta:hover,
+.navbar__cta:focus-visible {
+  color: var(--color-warm-white) !important;
 }
 
 .navbar__toggle {

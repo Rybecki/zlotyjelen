@@ -425,6 +425,11 @@
   margin-bottom: 0.5rem;
 }
 
+.menu-page-footer-note {
+  margin-top: var(--space-lg);
+  text-align: center;
+}
+
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -615,6 +620,12 @@
 .attractions-table a {
   color: var(--color-gold-dark);
   text-decoration: underline;
+}
+
+.attractions-table__intro {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto var(--space-md);
 }
 
 .variant-cards {

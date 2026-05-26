@@ -12,7 +12,7 @@ export const menuSampleDishes: MenuSampleDish[] = [
   {
     id: 'pstrag',
     title: 'Pstrąg wędzony',
-    price: '32 zł',
+    price: '32,00 zł',
     description:
       'Podany na gorąco z pieczywem lub frytkami i kiszoną kapustą.',
     weight: 'ok. 350 g',
@@ -22,7 +22,7 @@ export const menuSampleDishes: MenuSampleDish[] = [
   {
     id: 'burger-jelen',
     title: 'Burger z szarpanego jelenia',
-    price: '36 zł',
+    price: '56,00 zł',
     description:
       'Maślana bułka z szarpanym mięsem z jeleniego udźca, maczanym w sosie z palonych kości, sezamową kiszoną kapustą, piklowaną czerwoną cebulą i majonezem z wędzonych śliwek. Z dodatkiem frytek drwala.',
     weight: 'ok. 550 g',
@@ -32,7 +32,7 @@ export const menuSampleDishes: MenuSampleDish[] = [
   {
     id: 'burger-dzik',
     title: 'Burger z dzika',
-    price: '34 zł',
+    price: '54,00 zł',
     description:
       'Zapieczony pod plastrem wędzonego sera, w maślanej bułce z rukolą, sosem chrzanowym i leśną żurawiną. Z dodatkiem frytek drwala.',
     weight: 'ok. 550 g',
@@ -42,7 +42,7 @@ export const menuSampleDishes: MenuSampleDish[] = [
   {
     id: 'salatka-kaczka',
     title: 'Sałatka z grillowaną kaczką sous-vide',
-    price: '46 zł',
+    price: '65,00 zł',
     description:
       'Podana na świeżych sałatach z pomidorkami koktajlowymi, ogórkiem, sosem miodowym z orzechami nerkowca i pszennym pieczywem z ziołami i czosnkiem niedźwiedzim.',
     weight: 'ok. 300 g',
@@ -55,7 +55,7 @@ export const menuSampleDishes: MenuSampleDish[] = [
 export const menuSoupHighlight: MenuSampleDish = {
   id: 'rosol-dziki',
   title: 'Domowy rosół z dzikiego ptactwa z makaronem',
-  price: '35 zł',
+  price: '26,00 zł',
   description:
     'Klarowny, aromatyczny rosół z makaronem nitkami, marchewką i świeżym szczypiorkiem – z dziczyzną w roli głównej.',
   weight: 'ok. 400 ml',

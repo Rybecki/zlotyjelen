@@ -2,22 +2,30 @@ import { Link } from 'react-router-dom';
 import { PageHero } from '../components/ui/PageHero';
 import { PageDeerBackdrop } from '../components/ui/PageDeerBackdrop';
 import { Button } from '../components/ui/Button';
-import { WeddingVariantCard } from '../components/wedding/WeddingVariantCard';
-import { MenuDishCard } from '../components/menu/MenuDishCard';
-import { menuCategories } from '../data/menu';
-import {
-  menuSampleDishes,
-  menuSoupHighlight,
-  menuDessertHighlight,
-  type MenuSampleDish,
-} from '../data/menuDishes';
-import { SITE } from '../data/site';
-import '../styles/offer-pages.css';
+import { MenuSection } from '../components/menu/MenuSection';
+import { menuRestaurantSections } from '../data/menuRestaurant';
 
-const menuCategoryHighlights: Record<string, MenuSampleDish> = {
-  'menu-zupy': menuSoupHighlight,
-  'menu-desery': menuDessertHighlight,
-};
+const MENU_SECTION_ORDER = [
+  'pierogi',
+  'dania-glowne',
+  'zupy',
+  'przystawki',
+  'napoje-cieple',
+  'desery',
+  'burgery',
+  'ryby',
+  'napoje-zimne',
+  'dania-dzieci',
+  'piwa-bezalkoholowe',
+  'piwa-beczkowe',
+] as const;
+
+const orderedMenuSections = MENU_SECTION_ORDER.map((id) =>
+  menuRestaurantSections.find((section) => section.id === id),
+).filter((section): section is (typeof menuRestaurantSections)[number] => Boolean(section));
+import { SITE } from '../data/site';
+import '../components/menu/MenuSection.css';
+import '../styles/offer-pages.css';
 
 export function MenuPage() {
   return (
@@ -38,36 +46,13 @@ export function MenuPage() {
             </p>
           </div>
 
-          <div className="groups-section fade-in">
-            <h2 className="section__title groups-section__title">Przykładowe dania</h2>
-            <div className="menu-dishes menu-dishes--first">
-              {menuSampleDishes.map((dish, index) => (
-                <MenuDishCard key={dish.id} dish={dish} reverse={index % 2 === 1} />
-              ))}
-            </div>
+          <div className="menu-page-sections">
+            {orderedMenuSections.map((section) => (
+              <MenuSection key={section.id} section={section} />
+            ))}
           </div>
 
-          <div className="groups-section fade-in">
-            <h2 className="section__title groups-section__title">Karta dań</h2>
-            <div className="wedding-variants">
-              {menuCategories.map((category) => {
-                const highlight = menuCategoryHighlights[category.id];
-                if (highlight) {
-                  return (
-                    <div key={category.id} className="menu-category-with-dish">
-                      <WeddingVariantCard variant={category} />
-                      <div className="menu-dishes menu-dishes--in-category">
-                        <MenuDishCard dish={highlight} />
-                      </div>
-                    </div>
-                  );
-                }
-                return <WeddingVariantCard key={category.id} variant={category} />;
-              })}
-            </div>
-          </div>
-
-          <div className="content-block fade-in">
+          <div className="content-block fade-in menu-page-footer-note">
             <p>
               Pełna oferta okolicznościowa i weselna dostępna na stronie{' '}
               <Link to="/oferta/wesela">Oferta weselna</Link>. Pytania i rezerwacje:{' '}

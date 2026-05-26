@@ -1,0 +1,120 @@
+.menu-page-sections {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.menu-section__title {
+  font-size: clamp(1.65rem, 3.5vw, 2.1rem);
+  color: var(--color-forest);
+  text-align: center;
+  margin-bottom: var(--space-sm);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-beige);
+}
+
+.menu-section__note {
+  text-align: center;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--color-gold-dark);
+  margin: 0 0 var(--space-md);
+}
+
+.menu-section__featured {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.menu-section__featured:only-child {
+  margin-bottom: 0;
+}
+
+.menu-section__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+  background: var(--color-warm-white);
+  border: 1px solid var(--color-beige-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+@media (min-width: 900px) {
+  .menu-section__list--compact {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu-section__list--compact .menu-item:nth-child(odd) {
+    border-right: 1px solid var(--color-beige);
+  }
+}
+
+.menu-item {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-beige);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item__row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.menu-item__name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-forest);
+  line-height: 1.35;
+  flex: 1 1 12rem;
+}
+
+.menu-item__price {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-gold-dark);
+  white-space: nowrap;
+}
+
+.menu-item__desc {
+  margin: 0.35rem 0 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.menu-item__portion {
+  margin: 0.25rem 0 0;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .menu-item {
+    padding: 0.85rem 1rem;
+  }
+
+  .menu-item__name {
+    font-size: 1rem;
+  }
+
+  .menu-item__price {
+    font-size: 1.1rem;
+  }
+}

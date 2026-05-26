@@ -1,6 +1,6 @@
 import { PageHero } from '../components/ui/PageHero';
 import { nearbyAttractions, juraHighlights, attractionsHeroSlides } from '../data/attractions';
-import { buildDirectionsUrl } from '../utils/maps';
+import { buildDirectionsUrl, buildMapPlaceUrl } from '../utils/maps';
 import '../styles/offer-pages.css';
 
 export function AttractionsPage() {
@@ -26,6 +26,9 @@ export function AttractionsPage() {
 
           <div className="content-block fade-in">
             <h2>Atrakcje w pobliżu obiektu</h2>
+            <p className="section__subtitle attractions-table__intro">
+              Odległości liczone od Złotego Jelenia, ul. Kościuszki 99, Złoty Potok.
+            </p>
             <div className="table-scroll-wrap">
               <table className="attractions-table data-table--cards">
                 <thead>
@@ -34,6 +37,7 @@ export function AttractionsPage() {
                     <th>Kategoria</th>
                     <th>Odległość</th>
                     <th>Trasa</th>
+                    <th>Mapa</th>
                     <th>Strona</th>
                   </tr>
                 </thead>
@@ -41,12 +45,8 @@ export function AttractionsPage() {
                   {nearbyAttractions.map((a) => (
                     <tr key={a.name}>
                       <td>{a.name}</td>
-                      <td data-label="Kategoria">
-                        {a.category}
-                      </td>
-                      <td data-label="Odległość">
-                        {a.distance}
-                      </td>
+                      <td data-label="Kategoria">{a.category}</td>
+                      <td data-label="Odległość">{a.distance}</td>
                       <td data-label="Trasa">
                         <a
                           href={buildDirectionsUrl(a.mapsDestination)}
@@ -54,6 +54,15 @@ export function AttractionsPage() {
                           rel="noopener noreferrer"
                         >
                           Zobacz trasę
+                        </a>
+                      </td>
+                      <td data-label="Mapa">
+                        <a
+                          href={buildMapPlaceUrl(a.mapsDestination)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Otwórz mapę
                         </a>
                       </td>
                       <td data-label="Strona">

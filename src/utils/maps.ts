@@ -16,3 +16,12 @@ export function buildDirectionsUrl(destination: MapsDestination): string {
       : `${destination.lat},${destination.lng}`;
   return `https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${dest}&travelmode=driving`;
 }
+
+/** Link do podglądu miejsca na mapie Google. */
+export function buildMapPlaceUrl(destination: MapsDestination): string {
+  const query =
+    typeof destination === 'string'
+      ? encodeURIComponent(destination)
+      : `${destination.lat},${destination.lng}`;
+  return `https://www.google.com/maps/search/?api=1&query=${query}`;
+}

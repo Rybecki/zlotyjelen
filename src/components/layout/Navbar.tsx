@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { Link, NavLink } from 'react-router-dom';
+import { SITE } from '../../data/site';
 import { useNavbarScroll } from '../../hooks/useNavbarScroll';
 import './Navbar.css';
 
@@ -70,9 +71,13 @@ function NavLinks({
         Kontakt
       </NavLink>
 
-      <Link to="/kontakt" className="navbar__cta btn btn--primary" onClick={closeMenu}>
-        Zarezerwuj pokój
-      </Link>
+      <a
+        href={`tel:${SITE.phone.replace(/\s/g, '')}`}
+        className="navbar__cta btn btn--primary"
+        onClick={closeMenu}
+      >
+        +48 {SITE.phoneDisplay}
+      </a>
     </>
   );
 }
