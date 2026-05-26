@@ -8,14 +8,34 @@ interface ImageLightboxProps {
   caption?: string;
   open: boolean;
   onClose: () => void;
+  onPrevious?: () => void;
+  onNext?: () => void;
 }
 
-export function ImageLightbox({ src, alt, caption, open, onClose }: ImageLightboxProps) {
+export function ImageLightbox({
+  src,
+  alt,
+  caption,
+  open,
+  onClose,
+  onPrevious,
+  onNext,
+}: ImageLightboxProps) {
+  const hasNav = Boolean(onPrevious && onNext);
+
   useEffect(() => {
     if (!open) return;
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
+      if (e.key === 'ArrowLeft' && onPrevious) {
+        e.preventDefault();
+        onPrevious();
+      }
+      if (e.key === 'ArrowRight' && onNext) {
+        e.preventDefault();
+        onNext();
+      }
     };
 
     document.body.style.overflow = 'hidden';
@@ -25,7 +45,7 @@ export function ImageLightbox({ src, alt, caption, open, onClose }: ImageLightbo
       document.body.style.overflow = '';
       window.removeEventListener('keydown', onKey);
     };
-  }, [open, onClose]);
+  }, [open, onClose, onPrevious, onNext]);
 
   if (!open) return null;
 
@@ -48,12 +68,38 @@ export function ImageLightbox({ src, alt, caption, open, onClose }: ImageLightbo
       >
         ×
       </button>
+      {hasNav && (
+        <>
+          <button
+            type="button"
+            className="lightbox__nav lightbox__nav--prev"
+            onClick={(e) => {
+              e.stopPropagation();
+              onPrevious?.();
+            }}
+            aria-label="Poprzednie zdjęcie"
+          >
+            ‹
+          </button>
+          <button
+            type="button"
+            className="lightbox__nav lightbox__nav--next"
+            onClick={(e) => {
+              e.stopPropagation();
+              onNext?.();
+            }}
+            aria-label="Następne zdjęcie"
+          >
+            ›
+          </button>
+        </>
+      )}
       <div
         className="lightbox__content"
         onClick={(e) => e.stopPropagation()}
         role="presentation"
       >
-        <img src={src} alt={alt} />
+        <img key={src} src={src} alt={alt} />
         {caption && <p className="lightbox__caption">{caption}</p>}
       </div>
     </div>,

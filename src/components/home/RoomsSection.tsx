@@ -22,7 +22,9 @@ export function RoomsSection() {
               key={room.id}
               className={`room-card fade-in${room.capacity === 2 || room.capacity === 4 ? ' room-card--dark' : ''}`}
             >
-              <div className="room-card__image">
+              <div
+                className={`room-card__image${room.id === 'pokoj-1' ? ' room-card__image--1os' : ''}`}
+              >
                 <img src={room.image} alt={room.name} loading="lazy" width={400} height={280} />
                 <span className="room-card__badge">{room.capacity} {room.capacity === 1 ? 'osoba' : 'osoby'}</span>
               </div>

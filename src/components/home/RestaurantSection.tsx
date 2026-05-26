@@ -3,12 +3,12 @@ import './RestaurantSection.css';
 
 const photos = [
   {
-    src: '/images/restaurant-1.png',
-    alt: 'Burgery z frytkami – dania regionalne w restauracji Złoty Jeleń',
+    src: '/images/menu-burger-dzik.png',
+    alt: 'Burger z dzika z frytkami – dania regionalne w restauracji Złoty Jeleń',
   },
   {
-    src: '/images/restaurant-2.png',
-    alt: 'Dania główne z frytkami i surówką – kuchnia regionalna Złoty Jeleń',
+    src: '/images/menu-pstrag.png',
+    alt: 'Pstrąg wędzony – specjalność restauracji Złoty Jeleń',
   },
 ];
 

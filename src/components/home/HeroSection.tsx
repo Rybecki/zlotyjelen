@@ -14,13 +14,13 @@ const slides = [
     position: 'center 40%',
   },
   {
-    src: '/images/hero-3.png',
-    alt: 'Zachód słońca nad doliną i lasami w okolicy Złotego Potoku',
+    src: '/images/hero-4.png',
+    alt: 'Złoty Jeleń – budynek, polana i las wokół obiektu',
     position: 'center',
   },
   {
-    src: '/images/hero-4.png',
-    alt: 'Złoty Jeleń – budynek, taras i zielony teren wokół obiektu',
+    src: '/images/hero-day.png',
+    alt: 'Złoty Jeleń – restauracja i okolica wśród zieleni',
     position: 'center',
   },
 ];

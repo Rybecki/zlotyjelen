@@ -1,13 +1,239 @@
-.offer-intro {
+.page-hero--menu {
+  display: flex;
+  align-items: center;
+  min-height: 55vh;
+  padding-block: calc(var(--nav-height) + var(--space-md)) var(--space-lg);
+}
+
+.page-hero--offer {
+  min-height: 55vh;
+}
+
+.page-hero--rooms,
+.page-hero--school,
+.page-hero--wedding,
+.page-hero--groups,
+.page-hero--attractions,
+.page-hero--rental,
+.page-hero--contact {
+  display: flex;
+  align-items: center;
+  min-height: 55vh;
+  padding-block: calc(var(--nav-height) + var(--space-md)) var(--space-lg);
+}
+
+.page-hero--wedding .page-hero__content,
+.page-hero--groups .page-hero__content,
+.page-hero--attractions .page-hero__content,
+.page-hero--rental .page-hero__content,
+.page-hero--contact .page-hero__content {
+  text-align: center;
+  margin-inline: auto;
+}
+
+.page-hero--contact .page-hero__bg {
+  background-position: center 40%;
+}
+
+.page-hero__slides {
+  position: absolute;
+  inset: 0;
+  opacity: 0.35;
+}
+
+.page-hero__slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.page-hero__slide--active {
+  opacity: 1;
+}
+
+.page-hero--rooms .page-hero__slide {
+  background-position: center 85%;
+}
+
+.page-hero--menu .page-hero__bg {
+  opacity: 0.55;
+  background-size: cover;
+  background-position: 50% 46%;
+  background-repeat: no-repeat;
+}
+
+.page-hero--menu .page-hero__overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(250, 248, 245, 0.78) 0%,
+    rgba(250, 248, 245, 0.42) 45%,
+    rgba(250, 248, 245, 0.55) 70%,
+    rgba(250, 248, 245, 0.88) 100%
+  );
+}
+
+.page-hero--menu .page-hero__content {
+  text-align: center;
   max-width: 720px;
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+  .page-hero--menu {
+    min-height: 55vh;
+    padding-block: calc(var(--nav-height) + var(--space-sm)) var(--space-md);
+  }
+
+  .page-hero--offer {
+    min-height: 55vh;
+  }
+
+  .page-hero--rooms,
+  .page-hero--school,
+  .page-hero--wedding,
+  .page-hero--groups,
+  .page-hero--attractions,
+  .page-hero--rental,
+  .page-hero--contact {
+    min-height: 55vh;
+    padding-block: calc(var(--nav-height) + var(--space-sm)) var(--space-md);
+  }
+
+  .page-hero--rooms .page-hero__slide {
+    background-position: center 90%;
+  }
+
+  .page-hero--menu .page-hero__bg {
+    background-position: 0% 44%;
+  }
+}
+
+.offer-intro {
+  max-width: 800px;
   margin: 0 auto var(--space-lg);
   text-align: center;
   color: var(--color-text-muted);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.offer-intro p {
+  margin-bottom: var(--space-sm);
+}
+
+.offer-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.offer-intro strong {
+  color: var(--color-forest);
+  font-weight: 600;
+}
+
+.rental-partner-intro ul {
+  margin: var(--space-sm) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rental-partner-intro__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  margin-inline: auto;
+  max-width: 12rem;
+}
+
+.rental-partner-intro__list li {
+  position: relative;
+  padding-left: 1rem;
+  font-weight: 600;
+  color: var(--color-forest);
+  width: 100%;
+  text-align: left;
+}
+
+.rental-partner-intro__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+
+.rental-partner-intro a {
+  color: var(--color-gold-dark);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.rental-partner-intro a:hover {
+  color: var(--color-forest);
+}
+
+.rental-partner-contact {
+  margin-top: var(--space-lg);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.rental-partner-contact a {
+  color: var(--color-gold-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.rental-partner-contact a:hover {
+  color: var(--color-forest);
+}
+
+.rooms-intro__stats {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-md);
+  flex-wrap: wrap;
+}
+
+.rooms-intro__stats > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+}
+
+.rooms-intro__stat-value {
+  font-family: var(--font-display);
+  font-size: 2.75rem;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-gold-dark);
+}
+
+.rooms-intro__stat-label {
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
 }
 
 .offer-cta {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  justify-content: center;
   margin-top: var(--space-lg);
 }
 
@@ -15,6 +241,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-lg);
+}
+
+.rooms-detail-grid + .groups-section {
+  margin-top: var(--space-xl);
 }
 
 .room-detail {
@@ -33,6 +263,10 @@
   aspect-ratio: 4/3;
   object-fit: cover;
   width: 100%;
+}
+
+.room-detail__image--1os {
+  object-position: center 90%;
 }
 
 .room-detail h2 {
@@ -65,25 +299,71 @@
 
 .benefits-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
   gap: var(--space-sm);
-  margin: var(--space-md) 0;
+  margin: var(--space-md) auto;
+  width: 100%;
+  max-width: 100%;
+  justify-items: stretch;
+}
+
+@media (min-width: 640px) {
+  .benefits-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .benefits-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: 1080px;
+  }
 }
 
 .benefits-list li {
-  padding: 0.75rem 1rem 0.75rem 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
   background: var(--color-warm-white);
   border-radius: var(--radius-md);
-  position: relative;
   box-shadow: var(--shadow-soft);
 }
 
-.benefits-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 0.75rem;
-  color: var(--color-gold);
-  font-weight: 700;
+.benefits-list__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: rgba(184, 148, 79, 0.12);
+  border: 1px solid rgba(212, 184, 118, 0.35);
+  color: var(--color-gold-dark);
+}
+
+.material-symbols-outlined.benefit-icon {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 1;
+  display: block;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+  -webkit-font-smoothing: antialiased;
+}
+
+.benefits-list__text {
+  flex: 1;
+  min-width: 0;
+  padding-top: 0.35rem;
+  line-height: 1.5;
 }
 
 .price-table {
@@ -298,16 +578,24 @@
   }
 }
 
-.attractions-table-wrap {
+.attractions-table-wrap,
+.table-scroll-wrap {
   overflow-x: auto;
   margin: var(--space-md) 0;
+  -webkit-overflow-scrolling: touch;
 }
 
 .attractions-table {
   width: 100%;
-  min-width: 600px;
+  min-width: 0;
   border-collapse: collapse;
   font-size: 0.9rem;
+}
+
+@media (min-width: 769px) {
+  .attractions-table {
+    min-width: 680px;
+  }
 }
 
 .attractions-table th,
@@ -358,6 +646,380 @@
   margin-top: var(--space-sm);
 }
 
+/* —— Wesela —— */
+.wedding-intro {
+  max-width: 52rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.wedding-intro p {
+  margin-bottom: var(--space-sm);
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
+.wedding-intro p:last-child {
+  margin-bottom: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  color: var(--color-forest);
+}
+
+.wedding-variants {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+.wedding-buffets {
+  margin-top: var(--space-xl);
+}
+
+.wedding-buffets__title {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.wedding-buffet {
+  background: var(--color-warm-white);
+  border: 1px solid var(--color-beige-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-md);
+  margin-bottom: var(--space-md);
+}
+
+.wedding-buffet__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-beige);
+}
+
+.wedding-buffet__head h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--color-forest);
+}
+
+.wedding-buffet__hint {
+  font-weight: 500;
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.wedding-buffet__price {
+  margin: 0;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-gold-dark);
+  white-space: nowrap;
+}
+
+.wedding-buffet__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.wedding-buffet__item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-beige);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.wedding-buffet__item:last-child {
+  border-bottom: none;
+}
+
+.wedding-buffet__item-price {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-gold-dark);
+  white-space: nowrap;
+}
+
+.wedding-buffet--hot .wedding-buffet__item-price {
+  font-size: clamp(1.35rem, 2.5vw, 1.65rem);
+}
+
+.wedding-buffet__note {
+  margin: 0;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+.wedding-extras-note {
+  margin-top: var(--space-md);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+/* —— Grupy zorganizowane —— */
+.groups-section {
+  margin-bottom: var(--space-xl);
+}
+
+.groups-section__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.groups-section__title {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.groups-section__header .groups-section__title {
+  margin-bottom: var(--space-xs);
+}
+
+.groups-section__header .section__subtitle {
+  margin-bottom: 0;
+}
+
+.groups-rooms-subtitle {
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+}
+
+.groups-rooms-subtitle__num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35em;
+  color: var(--color-gold-dark);
+  line-height: 1;
+}
+
+.groups-wege {
+  margin-top: var(--space-md);
+  background: var(--color-warm-white);
+  border: 1px solid var(--color-beige-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-md);
+}
+
+.groups-wege h3 {
+  margin: 0 0 var(--space-sm);
+  font-size: 1.1rem;
+  color: var(--color-forest);
+}
+
+.groups-wege ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.groups-wege li {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+.groups-wege li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+
+.groups-drinks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+  align-items: stretch;
+}
+
+.groups-drinks__panel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-warm-white);
+  border: 1px solid var(--color-beige-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  padding: var(--space-md);
+}
+
+.groups-drinks__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-beige);
+}
+
+.groups-drinks__head h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--color-forest);
+}
+
+.groups-drinks__price {
+  margin: 0;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-gold-dark);
+  white-space: nowrap;
+}
+
+.groups-drinks__note {
+  margin: 0 0 var(--space-sm);
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+.groups-drinks__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex: 1;
+}
+
+.groups-drinks__list li {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--color-beige);
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.groups-drinks__list li:last-child {
+  border-bottom: none;
+}
+
+.groups-drinks__promo {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.groups-drinks__table {
+  width: 100%;
+  margin: 0;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.groups-drinks__table td {
+  padding: 0.35rem 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.groups-drinks__own {
+  margin: var(--space-sm) 0 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+@media (max-width: 720px) {
+  .groups-drinks {
+    grid-template-columns: 1fr;
+  }
+}
+
+.groups-rooms-grid {
+  margin-top: var(--space-md);
+}
+
+.groups-rooms-grid .room-card__btn {
+  display: none;
+}
+
+.groups-price-list {
+  margin: 0 0 var(--space-md);
+  padding: 0;
+  list-style: none;
+  background: var(--color-warm-white);
+  border: 1px solid var(--color-beige-dark);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+
+.groups-price-list__item {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--color-beige);
+}
+
+.groups-price-list__item:last-child {
+  border-bottom: none;
+}
+
+.groups-price-list__main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.groups-price-list__name {
+  flex: 1;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+.groups-price-list__price {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 600;
+  color: var(--color-gold-dark);
+  white-space: nowrap;
+}
+
+.groups-price-list__note {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.groups-attractions__subtitle {
+  margin: var(--space-lg) 0 var(--space-sm);
+  font-size: 1.1rem;
+  color: var(--color-forest-light);
+  text-align: center;
+}
+
+.groups-attractions__more {
+  margin: var(--space-md) 0 0;
+  text-align: center;
+}
+
+.groups-closing p {
+  line-height: 1.75;
+  color: var(--color-text);
+}
+
 .contact-form {
   display: grid;
   gap: var(--space-sm);
@@ -401,6 +1063,29 @@
   gap: var(--space-xl);
 }
 
+.contact-page__heading {
+  font-size: 1.75rem;
+  text-align: left;
+}
+
+.contact-page__subheading {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.contact-page__address {
+  font-style: normal;
+  margin-bottom: 1.5rem;
+}
+
+.contact-page__address p + p {
+  margin-top: 0.5rem;
+}
+
+.contact-page__map {
+  margin-top: 1.5rem;
+}
+
 @media (max-width: 768px) {
   .room-detail {
     grid-template-columns: 1fr;
@@ -427,4 +1112,15 @@
     margin-inline: auto;
     display: inline-flex;
   }
+
+  .contact-page__heading,
+  .contact-page__subheading {
+    text-align: center;
+  }
+}
+
+.contact-page__manager,
+.contact-page__hours-note {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
 }

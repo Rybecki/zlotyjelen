@@ -1,52 +1,59 @@
+import { Link } from 'react-router-dom';
 import { PageHero } from '../components/ui/PageHero';
-import { Button } from '../components/ui/Button';
+import { RentalPartnerCard } from '../components/rental/RentalPartnerCard';
+import { rentalPartnerItems, rentalHeroSlides, RENTAL_PARTNER_NAME } from '../data/rentalPartners';
 import '../styles/offer-pages.css';
 
-const equipment = [
-  { name: 'Rowery turystyczne', desc: 'Idealne na jurajskie szlaki i trasy asfaltowe wokół Złotego Potoku.' },
-  { name: 'Rowery górskie', desc: 'Dla bardziej wymagających tras i ścieżek leśnych.' },
-  { name: 'Akcesoria', desc: 'Kaski, mapy szlaków i rekomendacje tras w okolicy.' },
-];
+const PARTNER_SITE = 'https://ja-yhymm.pl';
 
 export function RentalPage() {
   return (
     <>
       <PageHero
+        variant="offer"
+        className="page-hero--rental"
         title="Wypożyczalnia"
-        subtitle="Odkrywaj Jurę na rowerze – wypożycz sprzęt w Złotym Jeleniu"
-        image="/images/hero-day.png"
+        subtitle="Odkrywaj Jurę aktywnie – rowery, kajaki, transport i atrakcje dla całej rodziny"
+        slides={rentalHeroSlides}
       />
       <section className="section deer-watermark">
         <div className="container">
           <p className="offer-intro fade-in">
-            Złoty Jeleń to doskonała baza wypadowa na aktywny wypoczynek. W okolicy czekają szlaki
-            piesze i rowerowe, zamki, rezerwaty przyrody, park linowy, kajaki i wspinaczka.
+            Złoty Jeleń to doskonała baza wypadowa na aktywny wypoczynek w Jurze Krakowsko-Częstochowskiej.
+            W okolicy czekają szlaki piesze i rowerowe, zamki, rezerwaty przyrody oraz liczne atrakcje.
           </p>
 
-          <div className="variant-cards fade-in">
-            {equipment.map((item) => (
-              <article key={item.name} className="variant-card">
-                <h4>{item.name}</h4>
-                <p>{item.desc}</p>
-              </article>
-            ))}
-          </div>
-
-          <div className="content-block fade-in">
+          <div className="content-block rental-partner-intro fade-in">
+            <h2>Wypożyczenie sprzętu</h2>
             <p>
-              Szczegóły dostępności sprzętu i cennik ustalamy indywidualnie. Zapraszamy do kontaktu
-              telefonicznego lub mailowego.
+              We współpracy z firmą{' '}
+              <a href={PARTNER_SITE} target="_blank" rel="noopener noreferrer">
+                <strong>{RENTAL_PARTNER_NAME}</strong>
+              </a>{' '}
+              oferujemy możliwość wypożyczenia:
+            </p>
+            <ul className="rental-partner-intro__list">
+              <li>e-rowery</li>
+              <li>kajaki</li>
+              <li>VIP bus</li>
+              <li>dmuchańce</li>
+            </ul>
+            <p>
+              Szczegóły, dostępność i rezerwacje znajdziesz na stronie partnera – wybierz interesującą
+              Cię kategorię poniżej.
             </p>
           </div>
 
-          <div className="offer-cta fade-in" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
-            <Button to="/kontakt" variant="primary">
-              Zapytaj o wypożyczenie
-            </Button>
-            <Button to="/atrakcje" variant="ghost">
-              Atrakcje w okolicy
-            </Button>
+          <div className="rental-partners fade-in">
+            {rentalPartnerItems.map((item, index) => (
+              <RentalPartnerCard key={item.id} item={item} reverse={index % 2 === 1} />
+            ))}
           </div>
+
+          <p className="rental-partner-contact fade-in">
+            Chcesz coś wypożyczyć?{' '}
+            <Link to="/kontakt">Skontaktuj się z nami</Link> – chętnie pomożemy.
+          </p>
         </div>
       </section>
     </>

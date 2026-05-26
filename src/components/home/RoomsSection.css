@@ -48,13 +48,18 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: var(--color-gold);
-  color: var(--color-warm-white);
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.35rem 0.75rem;
   border-radius: var(--radius-sm);
   letter-spacing: 0.05em;
+  color: var(--color-warm-white);
+  border: 2px solid var(--color-warm-white);
+  background: var(--color-gold);
+}
+
+.room-card__image--1os img {
+  object-position: center 90%;
 }
 
 .room-card__body {

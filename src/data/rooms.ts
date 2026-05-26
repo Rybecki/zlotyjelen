@@ -21,19 +21,19 @@ export const rooms: Room[] = [
     id: 'pokoj-2',
     name: 'Pokój 2-osobowy',
     capacity: 2,
-    amenities: ['Łazienka', 'TV', 'WiFi', 'Łóżko małżeńskie'],
+    amenities: ['Łazienka', 'TV', 'WiFi', 'Dwa łóżka jednoosobowe'],
     image: '/images/room-2os.png',
     description:
-      'Komfortowy pokój dwuosobowy z łóżkiem małżeńskim. Doskonały wybór dla par i przyjaciół.',
+      'Komfortowy pokój dwuosobowy z dwoma łóżkami jednoosobowymi. Doskonały wybór dla par i przyjaciół.',
   },
   {
     id: 'pokoj-3',
     name: 'Pokój 3-osobowy',
     capacity: 3,
-    amenities: ['Łazienka', 'TV', 'WiFi', 'Łóżko + sofa'],
+    amenities: ['Łazienka', 'TV', 'WiFi', 'Trzy łóżka jednoosobowe'],
     image: '/images/room-3os.png',
     description:
-      'Przestronny pokój dla trzech osób. Idealny dla rodzin z dzieckiem lub małych grup.',
+      'Przestronny pokój z trzema łóżkami jednoosobowymi. Idealny dla rodzin z dzieckiem lub małych grup.',
   },
   {
     id: 'pokoj-4',
@@ -45,3 +45,8 @@ export const rooms: Room[] = [
       'Największy pokój w ofercie – idealny dla rodzin i grup czteroosobowych. Wszystkie pokoje z prywatną łazienką.',
   },
 ];
+
+export const roomsBathroomGallery = [
+  { src: '/images/bathroom-1.png', alt: 'Łazienka w pokoju gościnnym – umywalka i kabina prysznicowa' },
+  { src: '/images/bathroom-2.png', alt: 'Łazienka w pokoju gościnnym – kabina prysznicowa, umywalka i WC' },
+] as const;

@@ -1,115 +1,147 @@
 import { PageHero } from '../components/ui/PageHero';
+import { PageDeerBackdrop } from '../components/ui/PageDeerBackdrop';
 import { Button } from '../components/ui/Button';
+import { BenefitsList } from '../components/ui/BenefitsList';
+import type { BenefitItem } from '../components/ui/BenefitsList';
+import { ProgramGallery } from '../components/ui/ProgramGallery';
+import { WeddingVariantCard } from '../components/wedding/WeddingVariantCard';
+import {
+  weddingIntro,
+  weddingVariants,
+  weddingBuffetHot,
+  weddingBuffetCold,
+  weddingDrinks,
+  weddingGallery,
+  weddingHeroSlides,
+} from '../data/weddings';
 import { SITE } from '../data/site';
 import '../styles/offer-pages.css';
 
-const variants = [
+const extras: BenefitItem[] = [
+  { icon: 'bar', text: 'Bar mobilny i profesjonalna obsługa barmańska' },
+  { icon: 'buffet', text: 'Wiejski stół w dwóch wersjach – tradycyjny lub z dziczyzną' },
+  { icon: 'food', text: 'Bufet domowych słodkości' },
+  { icon: 'bonfire', text: 'Poprawiny w formie grilla na naszej polanie' },
   {
-    price: '139 zł/os.',
-    name: 'Wariant I',
-    items: [
-      'Przystawka (1 do wyboru): kaczka sous vide, pstrąg wędzony, łosoś gravlax',
-      'Zupa (1): rosół z dzikiego ptactwa lub krem z cukinii',
-      'Danie główne (2 do wyboru): polędwiczka sous vide, filet z kurczaka zagrodowego',
-      'Deser (1): sernik na gorąco lub brownie',
-      '*możliwa modyfikacja menu dla vegetarian',
-    ],
+    icon: 'dinner',
+    text: 'Pieczony dzik / udziec z dzika (możliwość podania zamiast kolacji) – pieczony w całości i podawany na sali',
   },
-  {
-    price: '169 zł/os.',
-    name: 'Wariant II',
-    items: [
-      'Przystawka: polędwica z jelenia, mus z dzikiej fasoli',
-      'Zupa: krem z białych warzyw lub zupa gulaszowa z dziczyzny',
-      'Dania główne (2): medaliony z jelenia, golonka z dzika, risotto z grzybami',
-      'Deser: panna cotta lub mini Pawłowa',
-    ],
-  },
-  {
-    price: '259 zł/os.',
-    name: 'Wariant III',
-    items: [
-      'Przystawka: tatar z jelenia, mozzarella z parmą, łosoś wędzony',
-      'Zupa: bulion z gęsi lub krem z żurku leśniczego',
-      'Dania główne (2): stek z combra jelenia, udko z gęsi confit, paella z owocami morza',
-      'Deser: crème brûlée lub fondant czekoladowy',
-    ],
-  },
-  {
-    price: '270 zł/os.',
-    name: 'Menu przykładowe',
-    items: [
-      'Kieliszek wina musującego, kawa, herbata, woda i soki bez limitu',
-      'Pełne menu z bufetem gorącym i zimnym',
-      'Bigos zbójnicki, deski serów, tatary, sałatki i więcej',
-    ],
-  },
+  { icon: 'photo', text: 'Fotobudka' },
+  { icon: 'music', text: 'Oprawa muzyczna (DJ, zespoły muzyczne)' },
+  { icon: 'guardian', text: 'Animator dla dzieci' },
+  { icon: 'tent', text: 'Ekskluzywne namioty dzwonkowe – Księżycowe Pole' },
 ];
 
-const extras = [
-  'Bar mobilny i profesjonalna obsługa barmańska',
-  'Wiejski stół w dwóch wersjach – tradycyjny lub z dziczyzną',
-  'Bufet domowych słodkości',
-  'Poprawiny – grill na polanie',
-  'Pieczony dzik / udziec z dzika podawany na sali',
-  'Fotobudka, oprawa muzyczna (DJ, zespoły)',
-  'Animator dla dzieci, namioty dzwonkowe – Księżycowe Pole',
-];
+function BuffetBlock({
+  title,
+  hint,
+  price,
+  priceLabel,
+  largeItemPrice,
+  items,
+}: {
+  title: string;
+  hint?: string;
+  price?: string;
+  priceLabel?: string;
+  largeItemPrice?: boolean;
+  items: string[];
+}) {
+  const buffetClass = [
+    'wedding-buffet',
+    'content-block',
+    largeItemPrice && 'wedding-buffet--hot',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  return (
+    <div className={buffetClass}>
+      <header className="wedding-buffet__head">
+        <h3>
+          {title}
+          {hint && <span className="wedding-buffet__hint"> ({hint})</span>}
+        </h3>
+        {price && <p className="wedding-buffet__price">{price}</p>}
+      </header>
+      <ul className="wedding-buffet__list">
+        {items.map((item) => (
+          <li key={item} className="wedding-buffet__item">
+            <span>{item}</span>
+            {priceLabel && <span className="wedding-buffet__item-price">{priceLabel}</span>}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export function WeddingsPage() {
   return (
-    <>
+    <PageDeerBackdrop>
       <PageHero
+        variant="offer"
+        className="page-hero--wedding"
         title="Oferta weselna"
         subtitle="Wesele inne niż zwykłe – w sercu Rezerwatu Przyrody Parkowe"
-        image="/images/hero-night.png"
+        slides={[...weddingHeroSlides]}
       />
       <section className="section">
         <div className="container">
-          <div className="content-block fade-in">
-            <p className="offer-intro" style={{ textAlign: 'left', margin: 0 }}>
-              Złoty Jeleń to unikatowe miejsce tworzone przez pasjonatów okolicznych terenów. Wyjątkowe
-              dania z lokalnych produktów, specjalność z dziczyzny – smaczne, zdrowe i bliskie naturze.
-              Poczuj bliskość lasu w najważniejszym dniu Twojego życia.
-            </p>
-          </div>
-
-          <div className="variant-cards fade-in">
-            {variants.map((v) => (
-              <article key={v.name} className="variant-card">
-                <h4>{v.name}</h4>
-                <ul>
-                  {v.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <p className="variant-price">{v.price}</p>
-              </article>
+          <div className="content-block fade-in wedding-intro">
+            {weddingIntro.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
 
+          <div className="wedding-variants fade-in">
+            {weddingVariants.map((variant) => (
+              <WeddingVariantCard key={variant.id} variant={variant} />
+            ))}
+          </div>
+
+          <div className="wedding-buffets fade-in">
+            <h2 className="section__title wedding-buffets__title">Bufety dodatkowe</h2>
+            <BuffetBlock
+              title={weddingBuffetHot.title}
+              hint={weddingBuffetHot.hint}
+              priceLabel={weddingBuffetHot.priceLabel}
+              largeItemPrice
+              items={weddingBuffetHot.items}
+            />
+            <BuffetBlock
+              title={weddingBuffetCold.title}
+              hint={weddingBuffetCold.hint}
+              price={weddingBuffetCold.price}
+              items={weddingBuffetCold.items}
+            />
+            <div className="wedding-buffet content-block">
+              <header className="wedding-buffet__head">
+                <h3>Napoje</h3>
+                <p className="wedding-buffet__price">{weddingDrinks.price}</p>
+              </header>
+              <p className="wedding-buffet__note">{weddingDrinks.text}</p>
+            </div>
+          </div>
+
           <div className="content-block fade-in">
-            <h3>Bufety dodatkowe</h3>
-            <p>
-              Bufet gorący (2 do wyboru): 21 zł/os. · Bufet zimny (6 do wyboru + pieczywo): 90 zł/os.
-              <br />
-              Napoje bez limitu: 20 zł/os.
-            </p>
+            <h2 className="section__title">Złoty Jeleń w obiektywie</h2>
+            <ProgramGallery photos={[...weddingGallery]} showCaptions={false} />
           </div>
 
           <div className="content-block fade-in">
             <h2>Dodatkowe atrakcje</h2>
-            <ul className="benefits-list">
-              {extras.map((e) => (
-                <li key={e}>{e}</li>
-              ))}
-            </ul>
-            <p><em>Ceny dodatkowych atrakcji wyceniane indywidualnie.</em></p>
+            <BenefitsList items={extras} />
+            <p className="wedding-extras-note">
+              <em>Ceny dodatkowych atrakcji wyceniane indywidualnie.</em>
+            </p>
           </div>
 
           <div className="content-block fade-in">
             <p>
-              Kontakt: <strong>{SITE.manager}</strong> · {SITE.phoneDisplay} · {SITE.email}
+              Kontakt: <strong>{SITE.manager}</strong> ·{' '}
+              <a href={`tel:${SITE.phone.replace(/\s/g, '')}`}>{SITE.phoneDisplay}</a> ·{' '}
+              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
             </p>
           </div>
 
@@ -120,6 +152,6 @@ export function WeddingsPage() {
           </div>
         </div>
       </section>
-    </>
+    </PageDeerBackdrop>
   );
 }

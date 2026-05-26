@@ -15,16 +15,16 @@ export function ContactPage() {
   return (
     <>
       <PageHero
+        variant="offer"
+        className="page-hero--contact"
         title="Kontakt"
         subtitle="Zarezerwuj pokój, stolik lub zapytaj o ofertę dla grupy"
-        image="/images/hero-night.png"
+        image="/images/contact-hero.png"
       />
       <section className="section">
         <div className="container contact-page-grid">
           <div className="fade-in">
-            <h2 className="section__title" style={{ fontSize: '1.75rem', textAlign: 'left' }}>
-              Napisz do nas
-            </h2>
+            <h2 className="section__title contact-page__heading">Napisz do nas</h2>
             {submitted ? (
               <p role="status" style={{ color: 'var(--color-forest)', fontWeight: 500 }}>
                 Dziękujemy za wiadomość! Skontaktujemy się wkrótce. W pilnych sprawach zadzwoń:{' '}
@@ -68,31 +68,27 @@ export function ContactPage() {
           </div>
 
           <div className="fade-in">
-            <h2 className="section__title" style={{ fontSize: '1.75rem', textAlign: 'left' }}>
-              Dane kontaktowe
-            </h2>
-            <address style={{ fontStyle: 'normal', marginBottom: '1.5rem' }}>
+            <h2 className="section__title contact-page__heading">Dane kontaktowe</h2>
+            <address className="contact-page__address">
               <p><strong>{SITE.name}</strong></p>
               <p>{SITE.addressFull}</p>
-              <p style={{ marginTop: '1rem' }}>
+              <p>
                 <a href={`tel:${SITE.phone.replace(/\s/g, '')}`}>{SITE.phoneDisplay}</a>
               </p>
               <p>
                 <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
               </p>
-              <p style={{ marginTop: '0.5rem', color: 'var(--color-text-muted)' }}>
+              <p className="contact-page__manager">
                 {SITE.manager} – manager ds. sprzedaży
               </p>
             </address>
 
-            <h3 style={{ fontSize: '1.1rem', marginBottom: '0.5rem' }}>Godziny restauracji</h3>
+            <h3 className="contact-page__subheading">Godziny restauracji</h3>
             <p>{SITE.restaurantHours.weekdays}</p>
             <p>{SITE.restaurantHours.weekend}</p>
-            <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
-              {SITE.restaurantHours.breakfast}
-            </p>
+            <p className="contact-page__hours-note">{SITE.restaurantHours.breakfast}</p>
 
-            <div className="contact-preview__map" style={{ marginTop: '1.5rem' }}>
+            <div className="contact-preview__map contact-page__map">
               <iframe
                 title="Lokalizacja Złoty Jeleń – Złoty Potok"
                 src={SITE.mapEmbed}

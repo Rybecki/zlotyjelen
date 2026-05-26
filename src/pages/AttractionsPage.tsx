@@ -1,35 +1,39 @@
 import { PageHero } from '../components/ui/PageHero';
-import { nearbyAttractions, juraHighlights } from '../data/attractions';
+import { nearbyAttractions, juraHighlights, attractionsHeroSlides } from '../data/attractions';
+import { buildDirectionsUrl } from '../utils/maps';
 import '../styles/offer-pages.css';
 
 export function AttractionsPage() {
   return (
     <>
       <PageHero
+        variant="offer"
+        className="page-hero--attractions"
         title="Atrakcje okolicy"
         subtitle="Jura Krakowsko-Częstochowska – zamki, szlaki, rezerwaty i aktywny wypoczynek"
-        image="/images/hero-day.png"
+        slides={[...attractionsHeroSlides]}
       />
       <section className="section">
         <div className="container">
-          <div className="attractions__grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1.5rem', marginBottom: '2rem' }}>
+          <div className="attractions-highlights">
             {juraHighlights.map((h) => (
-              <article key={h.title} className="attraction-card fade-in" style={{ background: 'var(--color-warm-white)', padding: '1.5rem', borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-soft)' }}>
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{h.title}</h3>
-                <p style={{ color: 'var(--color-text-muted)' }}>{h.text}</p>
+              <article key={h.title} className="attraction-highlight-card fade-in">
+                <h3>{h.title}</h3>
+                <p>{h.text}</p>
               </article>
             ))}
           </div>
 
           <div className="content-block fade-in">
             <h2>Atrakcje w pobliżu obiektu</h2>
-            <div className="attractions-table-wrap">
-              <table className="attractions-table">
+            <div className="table-scroll-wrap">
+              <table className="attractions-table data-table--cards">
                 <thead>
                   <tr>
                     <th>Nazwa</th>
                     <th>Kategoria</th>
                     <th>Odległość</th>
+                    <th>Trasa</th>
                     <th>Strona</th>
                   </tr>
                 </thead>
@@ -37,9 +41,22 @@ export function AttractionsPage() {
                   {nearbyAttractions.map((a) => (
                     <tr key={a.name}>
                       <td>{a.name}</td>
-                      <td>{a.category}</td>
-                      <td>{a.distance}</td>
-                      <td>
+                      <td data-label="Kategoria">
+                        {a.category}
+                      </td>
+                      <td data-label="Odległość">
+                        {a.distance}
+                      </td>
+                      <td data-label="Trasa">
+                        <a
+                          href={buildDirectionsUrl(a.mapsDestination)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Zobacz trasę
+                        </a>
+                      </td>
+                      <td data-label="Strona">
                         {a.url ? (
                           <a href={a.url} target="_blank" rel="noopener noreferrer">
                             Zobacz

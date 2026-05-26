@@ -1,0 +1,259 @@
+/* —— Układ mobilny (telefony i wąskie tablety) —— */
+
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 72px;
+  }
+
+  html {
+    overflow-x: clip;
+  }
+
+  body {
+    overflow-x: clip;
+  }
+
+  #root {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 1rem;
+  }
+
+  .section {
+    padding-block: var(--space-lg);
+  }
+
+  .page-hero {
+    padding-block: calc(var(--nav-height) + var(--space-md)) var(--space-md);
+  }
+
+  .page-hero__content {
+    max-width: 100%;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.65rem, 7.5vw, 2.35rem);
+    hyphens: auto;
+  }
+
+  .page-hero p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .section__title {
+    font-size: clamp(1.45rem, 5.5vw, 1.85rem);
+  }
+
+  .section__subtitle {
+    font-size: 0.95rem;
+  }
+
+  .offer-cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .offer-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .content-block h2 {
+    font-size: 1.35rem;
+  }
+
+  .content-block h3 {
+    font-size: 1.15rem;
+  }
+
+  /* Karty / nagłówki ofert */
+  .wedding-variant__head,
+  .wedding-buffet__head,
+  .groups-drinks__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .wedding-variant__price,
+  .wedding-buffet__price,
+  .groups-drinks__price {
+    white-space: normal;
+    font-size: 1.25rem;
+  }
+
+  .wedding-buffet__item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
+  }
+
+  .wedding-variant__sections {
+    grid-template-columns: 1fr !important;
+  }
+
+  .program-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .groups-drinks {
+    grid-template-columns: 1fr;
+  }
+
+  .variant-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar__logo img {
+    height: 52px;
+    max-width: 150px;
+  }
+
+  .footer {
+    padding-top: var(--space-lg);
+  }
+
+  .deer-watermark::before {
+    background-size: min(320px, 88vw);
+  }
+}
+
+@media (max-width: 899px) {
+  .wedding-variant__sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tabele → karty na wąskim ekranie */
+@media (max-width: 768px) {
+  .table-scroll-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: var(--space-md) 0;
+  }
+
+  .data-table--cards {
+    min-width: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  .data-table--cards thead {
+    display: none;
+  }
+
+  .data-table--cards tbody tr {
+    display: block;
+    margin-bottom: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-warm-white);
+    border: 1px solid var(--color-beige-dark);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .data-table--cards tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .data-table--cards td {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--color-beige);
+    text-align: right;
+    font-size: 0.9rem;
+  }
+
+  .data-table--cards td:last-child {
+    border-bottom: none;
+  }
+
+  .data-table--cards td::before {
+    content: attr(data-label);
+    flex: 0 0 38%;
+    max-width: 42%;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-gold-dark);
+    line-height: 1.4;
+  }
+
+  .data-table--cards td[data-label='']::before,
+  .data-table--cards td:not([data-label])::before {
+    display: none;
+  }
+
+  .data-table--cards td:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    font-weight: 600;
+    color: var(--color-forest);
+    font-size: 0.95rem;
+    padding-bottom: 0.65rem;
+    border-bottom: 2px solid var(--color-beige);
+  }
+
+  .data-table--cards td:first-child::before {
+    display: none;
+  }
+
+  .data-table--cards .price {
+    white-space: nowrap;
+  }
+}
+
+/* Atrakcje – kafelki */
+.attractions-highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.attraction-highlight-card {
+  background: var(--color-warm-white);
+  padding: var(--space-md);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-beige-dark);
+}
+
+.attraction-highlight-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.attraction-highlight-card p {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .attractions-highlights {
+    grid-template-columns: 1fr;
+  }
+}

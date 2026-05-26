@@ -9,10 +9,10 @@
 
 .footer__deer {
   position: absolute;
-  right: -5%;
+  right: 2%;
   bottom: 10%;
-  width: 45%;
-  max-width: 420px;
+  width: 39%;
+  max-width: 360px;
   aspect-ratio: 1;
   background: url('/images/jelen-geo.png') center / contain no-repeat;
   opacity: 0.08;

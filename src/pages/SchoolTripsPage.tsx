@@ -2,19 +2,48 @@ import { PageHero } from '../components/ui/PageHero';
 import { Button } from '../components/ui/Button';
 import { PageDeerBackdrop } from '../components/ui/PageDeerBackdrop';
 import { ProgramGallery } from '../components/ui/ProgramGallery';
+import { BenefitsList } from '../components/ui/BenefitsList';
+import type { BenefitItem } from '../components/ui/BenefitsList';
 import { SITE } from '../data/site';
 import '../styles/offer-pages.css';
 
-const benefits = [
-  'Wyżywienie (śniadania, obiady, obiadokolację i kolację)',
-  'Nieodpłatny pobyt 1 opiekuna na 15 uczestników',
-  'Darmowy parking',
-  'Możliwość zorganizowania ogniska oraz grilla',
-  'Możliwość aktywnego spędzenia czasu na dużej polanie',
-  'Sala konferencyjna mogąca pomieścić 50 osób',
-  'Bezpłatny Internet WiFi na terenie całego obiektu',
-  'Możliwość zorganizowania uroczystej kolacji z autorskim menu',
-  'Nocleg w pokojach 1, 2, 3 i 4-osobowych – wszystkie z łazienkami',
+const benefits: BenefitItem[] = [
+  {
+    icon: 'food',
+    text: 'Wyżywienie (śniadania, obiady, obiadokolację i kolację)',
+  },
+  {
+    icon: 'guardian',
+    text: 'Nieodpłatny pobyt 1 opiekuna na 15 uczestników',
+  },
+  {
+    icon: 'parking',
+    text: 'Darmowy parking',
+  },
+  {
+    icon: 'bonfire',
+    text: 'Możliwość zorganizowania ogniska oraz grilla',
+  },
+  {
+    icon: 'meadow',
+    text: 'Możliwość aktywnego spędzenia czasu na dużej polanie',
+  },
+  {
+    icon: 'conference',
+    text: 'Sala konferencyjna mogąca pomieścić 50 osób',
+  },
+  {
+    icon: 'wifi',
+    text: 'Bezpłatny Internet WiFi na terenie całego obiektu',
+  },
+  {
+    icon: 'dinner',
+    text: 'Możliwość zorganizowania uroczystej kolacji z autorskim menu',
+  },
+  {
+    icon: 'bed',
+    text: 'Nocleg w pokojach 1, 2, 3 i 4-osobowych – wszystkie z łazienkami',
+  },
 ];
 
 const packages = [
@@ -77,6 +106,47 @@ const programA = {
   ],
 };
 
+const programBGallery = [
+  {
+    src: '/images/school-olsztyn.png',
+    alt: 'Ruiny zamku w Olsztynie na Jurze Krakowsko-Częstochowskiej',
+    caption: 'Zamek Olsztyn',
+  },
+  {
+    src: '/images/school-brama-twardowskiego.png',
+    alt: 'Brama Twardowskiego – naturalna brama skalna w Złotym Potoku',
+    caption: 'Brama Twardowskiego',
+  },
+  {
+    src: '/images/school-ostreznik.png',
+    alt: 'Rezerwat Ostrężnik – jaskinia i skały wapienne',
+    caption: 'Rezerwat Ostrężnik',
+  },
+  {
+    src: '/images/school-muzeum-zarki.png',
+    alt: 'Muzeum Dawnych Rzemiosł w Żarkach – dawny młyn',
+    caption: 'Muzeum Dawnych Rzemiosł w Żarkach',
+  },
+];
+
+const schoolHeroSlides = [
+  {
+    src: '/images/school-ogrodzieniec.png',
+    alt: 'Ruiny Zamku Ogrodzieniec na Jurze',
+    position: 'center',
+  },
+  {
+    src: '/images/school-olsztyn.png',
+    alt: 'Ruiny zamku w Olsztynie na Jurze Krakowsko-Częstochowskiej',
+    position: 'center',
+  },
+  {
+    src: '/images/school-brama-twardowskiego.png',
+    alt: 'Brama Twardowskiego – naturalna brama skalna w Złotym Potoku',
+    position: 'center',
+  },
+];
+
 const programB = {
   day1: [
     '10:30 – Zwiedzanie Zamku Olsztyn',
@@ -98,45 +168,49 @@ export function SchoolTripsPage() {
   return (
     <PageDeerBackdrop>
       <PageHero
+        variant="offer"
+        className="page-hero--school"
         title="Oferta dla wycieczek szkolnych"
         subtitle="Edukacja, natura i komfortowy pobyt w sercu Jury"
-        image="/images/hero-day.png"
+        slides={schoolHeroSlides}
       />
       <section className="section">
         <div className="container">
           <div className="content-block fade-in">
             <h2>Dla grup wycieczkowych zapewniamy</h2>
-            <ul className="benefits-list">
-              {benefits.map((b) => (
-                <li key={b}>{b}</li>
-              ))}
-            </ul>
+            <BenefitsList items={benefits} />
           </div>
 
           <div className="content-block fade-in">
             <h2>Pakiety noclegowe z wyżywieniem</h2>
-            <table className="price-table">
-              <thead>
-                <tr>
-                  <th>Pakiet</th>
-                  <th>Pn–Pt</th>
-                  <th>Pt–Nd</th>
-                </tr>
-              </thead>
-              <tbody>
-                {packages.map((pkg) => (
-                  <tr key={pkg.name}>
-                    <td>
-                      <strong>{pkg.name}</strong>
-                      <br />
-                      <small>{pkg.desc}</small>
-                    </td>
-                    <td className="price">{pkg.weekday}</td>
-                    <td className="price">{pkg.weekend}</td>
+            <div className="table-scroll-wrap">
+              <table className="price-table data-table--cards">
+                <thead>
+                  <tr>
+                    <th>Pakiet</th>
+                    <th>Pn–Pt</th>
+                    <th>Pt–Nd</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {packages.map((pkg) => (
+                    <tr key={pkg.name}>
+                      <td>
+                        <strong>{pkg.name}</strong>
+                        <br />
+                        <small>{pkg.desc}</small>
+                      </td>
+                      <td className="price" data-label="Pn–Pt">
+                        {pkg.weekday}
+                      </td>
+                      <td className="price" data-label="Pt–Nd">
+                        {pkg.weekend}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
 
           <div className="content-block fade-in">
@@ -162,22 +236,25 @@ export function SchoolTripsPage() {
               <ProgramGallery photos={programAGallery} />
             </div>
 
-            <h3>Program II – Zamek Olsztyn</h3>
-            <div className="program-day">
-              <h4>Dzień pierwszy</h4>
-              <ul>
-                {programB.day1.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="program-day">
-              <h4>Dzień drugi</h4>
-              <ul>
-                {programB.day2.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+            <div className="program-block">
+              <h3>Program II – Zamek Olsztyn</h3>
+              <div className="program-day">
+                <h4>Dzień pierwszy</h4>
+                <ul>
+                  {programB.day1.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <div className="program-day">
+                <h4>Dzień drugi</h4>
+                <ul>
+                  {programB.day2.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+              <ProgramGallery photos={programBGallery} />
             </div>
           </div>
 

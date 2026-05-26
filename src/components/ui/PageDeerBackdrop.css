@@ -1,15 +1,16 @@
 .offer-page-deer {
   position: relative;
+  isolation: isolate;
 }
 
 .offer-page-deer__watermark {
-  position: fixed;
-  top: 50%;
+  position: absolute;
+  inset: 0;
   left: 50%;
   width: min(620px, 75vw);
-  height: min(620px, 75vh);
-  transform: translate(-50%, -50%);
-  background: url('/images/jelen-geo.png') center / contain no-repeat;
+  max-width: 100%;
+  transform: translateX(-50%);
+  background: url('/images/jelen-geo.png') center 35% / min(520px, 68vw) no-repeat;
   opacity: 0.1;
   pointer-events: none;
   z-index: 0;
@@ -23,14 +24,13 @@
 @media (max-width: 768px) {
   .offer-page-deer__watermark {
     width: min(420px, 90vw);
-    height: min(420px, 55vh);
+    background-size: min(360px, 82vw);
     opacity: 0.08;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .offer-page-deer__watermark {
-    position: absolute;
-    top: 30%;
+    background-position: center 25%;
   }
 }
