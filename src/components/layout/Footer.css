@@ -42,6 +42,17 @@
   letter-spacing: 0.05em;
 }
 
+.footer__address {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+.footer__address-region {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
 .footer__heading {
   font-family: var(--font-body);
   font-size: 0.75rem;

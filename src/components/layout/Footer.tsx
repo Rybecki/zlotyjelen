@@ -41,7 +41,8 @@ export function Footer() {
             <img src="/images/logo.png" alt={SITE.name} width={180} loading="lazy" />
           </Link>
           <p className="footer__tagline">{SITE.tagline}</p>
-          <p>{SITE.addressFull}</p>
+          <p className="footer__address">{SITE.addressFull}</p>
+          <p className="footer__address-region">{SITE.addressRegion}</p>
         </div>
 
         <div>

@@ -71,7 +71,12 @@ export function ContactPage() {
             <h2 className="section__title contact-page__heading">Dane kontaktowe</h2>
             <address className="contact-page__address">
               <p><strong>{SITE.name}</strong></p>
-              <p>{SITE.addressFull}</p>
+              <p>
+                <a href={SITE.mapsLink} target="_blank" rel="noopener noreferrer">
+                  {SITE.addressFull}
+                </a>
+              </p>
+              <p>{SITE.addressRegion}</p>
               <p>
                 <a href={`tel:${SITE.phone.replace(/\s/g, '')}`}>{SITE.phoneDisplay}</a>
               </p>
