@@ -53,12 +53,7 @@
 
 .hero__panel {
   width: 100%;
-  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.25rem, 4vw, 2.75rem);
-  background: rgba(45, 38, 32, 0.58);
-  border: 1px solid rgba(212, 184, 118, 0.45);
-  border-radius: var(--radius-lg);
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(6px);
+  padding: clamp(1rem, 3vw, 1.5rem) clamp(1rem, 4vw, 2rem);
 }
 
 .hero__logo {
@@ -68,8 +63,8 @@
   object-fit: contain;
   margin-bottom: var(--space-md);
   margin-inline: auto;
-  opacity: 0.95;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.2));
+  opacity: 0.98;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45)) drop-shadow(0 2px 12px rgba(0, 0, 0, 0.35));
 }
 
 .hero__eyebrow {
@@ -79,6 +74,9 @@
   text-transform: uppercase;
   color: var(--color-gold-light);
   margin-bottom: var(--space-sm);
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.45),
+    0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .hero h1 {
@@ -86,6 +84,9 @@
   color: var(--color-warm-white);
   margin-bottom: var(--space-md);
   font-weight: 600;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.45),
+    0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .hero__subtitle {
@@ -96,6 +97,9 @@
   opacity: 1;
   max-width: 620px;
   margin-inline: auto;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.45),
+    0 2px 12px rgba(0, 0, 0, 0.35);
 }
 
 .hero__actions {
@@ -140,7 +144,7 @@
   }
 
   .hero__panel {
-    padding: 1.25rem 1rem;
+    padding: 1rem 0.75rem;
   }
 
   .hero__logo {
