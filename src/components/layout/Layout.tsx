@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Navbar } from './Navbar';
 import { Footer } from './Footer';
+import { SocialFloatingBar } from './SocialFloatingBar';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 
 export function Layout() {
@@ -15,6 +16,7 @@ export function Layout() {
   return (
     <>
       <Navbar />
+      <SocialFloatingBar />
       <a href="#main-content" className="skip-link">
         Przejdź do treści
       </a>

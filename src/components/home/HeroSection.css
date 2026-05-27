@@ -155,5 +155,73 @@
 
   .hero__subtitle {
     font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.65rem, 7vw, 2.1rem);
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero__content {
+    padding-bottom: 4.75rem;
+  }
+
+  .hero__actions {
+    flex-wrap: nowrap;
+    gap: 0.5rem;
+    margin-top: var(--space-md);
+    width: 100%;
+    max-width: 100%;
+    padding-inline: 0.25rem;
+  }
+
+  .hero__actions .btn {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 0.5rem 0.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+  }
+
+  .hero__indicators {
+    bottom: 1.25rem;
+  }
+
+  .hero__indicators button {
+    width: 28px;
+  }
+
+  .hero__indicators button.active {
+    width: 40px;
+  }
+}
+
+@media (max-width: 768px) and (max-height: 740px) {
+  .hero__logo {
+    height: 88px;
+  }
+
+  .hero__eyebrow {
+    font-size: 0.65rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .hero h1 {
+    font-size: 1.55rem;
+  }
+
+  .hero__subtitle {
+    font-size: 0.88rem;
+  }
+
+  .hero__actions {
+    margin-top: 0.75rem;
+  }
+
+  .hero__actions .btn {
+    padding: 0.45rem 0.4rem;
+    font-size: 0.6rem;
   }
 }

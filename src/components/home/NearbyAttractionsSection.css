@@ -130,5 +130,23 @@
   .nearby-attractions__link {
     margin-inline: auto;
     display: inline-flex;
+    margin-bottom: var(--space-md);
+  }
+
+  .nearby-attractions__controls {
+    margin-top: var(--space-md);
+    gap: 0.35rem;
+  }
+
+  .nearby-attractions__controls > button {
+    width: 32px;
+    height: 32px;
+    font-size: 0.95rem;
+    flex-shrink: 0;
+  }
+
+  .nearby-attractions__dots {
+    max-width: 160px;
+    gap: 0.3rem;
   }
 }
