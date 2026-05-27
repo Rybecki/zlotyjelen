@@ -16,6 +16,7 @@ export const SITE = {
   },
   social: {
     facebook: 'https://www.facebook.com/zlotyjelen',
+    instagram: 'https://www.instagram.com/zloty.jelen/',
   },
   /** Współrzędne z mapy na stronie głównej / kontakt */
   coordinates: {
