@@ -3,14 +3,27 @@ import { Button } from '../ui/Button';
 import { schoolTripPriceHighlights } from '../../data/schoolTrips';
 import './OffersCTASection.css';
 
-type OfferTab = 'szkoly' | 'wesela' | 'okolicznosci' | 'grupy';
+type OfferTab = 'szkoly' | 'zielone-szkoly' | 'wesela' | 'okolicznosci' | 'grupy';
 
 const tabs: { id: OfferTab; label: string }[] = [
   { id: 'szkoly', label: 'Wycieczki szkolne' },
+  { id: 'zielone-szkoly', label: 'Zielone szkoły' },
   { id: 'wesela', label: 'Oferta weselna' },
   { id: 'okolicznosci', label: 'Okoliczności' },
   { id: 'grupy', label: 'Grupy zorganizowane' },
 ];
+
+const schoolTripOfferContent = {
+  lead:
+    'Kompleksowa obsługa grup wycieczkowych – wyżywienie, noclegi, sala na 100 osób, ognisko i gotowe programy 2-3 dniowe.',
+  highlights: [
+    ...schoolTripPriceHighlights,
+    '1 opiekun gratis na 15 uczestników · darmowy parking',
+    'Pokoje 1–6-osobowe (łóżka jednoosobowe) · łazienki · WiFi',
+    'Propozycje: Zamek Ogrodzieniec lub Olsztyn, edukacja leśno-przyrodnicza',
+  ],
+  priceNote: 'Pn–Pt / Pt–Nd – dopasujemy menu do budżetu szkoły',
+};
 
 const offerContent: Record<
   OfferTab,
@@ -25,17 +38,15 @@ const offerContent: Record<
 > = {
   szkoly: {
     title: 'Wycieczki szkolne na Jurze',
-    lead:
-      'Kompleksowa obsługa grup wycieczkowych – wyżywienie, noclegi, sala na 100 osób, ognisko i gotowe programy 2-3 dniowe.',
-    highlights: [
-      ...schoolTripPriceHighlights,
-      '1 opiekun gratis na 15 uczestników · darmowy parking',
-      'Pokoje 1–6-osobowe (łóżka jednoosobowe) · łazienki · WiFi',
-      'Propozycje: Zamek Ogrodzieniec lub Olsztyn, edukacja leśno-przyrodnicza',
-    ],
-    priceNote: 'Pn–Pt / Pt–Nd – dopasujemy menu do budżetu szkoły',
+    ...schoolTripOfferContent,
     to: '/oferta/wycieczki-szkolne',
     cta: 'Zobacz ofertę szkolną',
+  },
+  'zielone-szkoly': {
+    title: 'Zielone Szkoły na Jurze',
+    ...schoolTripOfferContent,
+    to: '/oferta/zielone-szkoly',
+    cta: 'Zobacz ofertę zielonych szkół',
   },
   wesela: {
     title: 'Wesele w sercu rezerwatu Parkowe',
