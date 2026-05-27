@@ -7,10 +7,6 @@ import { GroupsPriceList } from '../components/groups/GroupsPriceList';
 import { rooms, roomsBathroomGallery } from '../data/rooms';
 import {
   groupsAccommodation,
-  groupsLunchVariants,
-  groupsVegeMains,
-  groupsVegePhotos,
-  groupsBonfireVariants,
   groupsSoftDrinks,
   groupsAlcohol,
   groupsAttractionsPrimary,
@@ -18,7 +14,7 @@ import {
   groupsClosing,
   groupsHeroSlides,
 } from '../data/groups';
-import { SITE } from '../data/site';
+import { OfferContact } from '../components/ui/OfferContact';
 import '../components/home/RoomsSection.css';
 import '../styles/offer-pages.css';
 
@@ -81,28 +77,46 @@ export function GroupsPage() {
 
           <div className="groups-section fade-in">
             <h2 className="section__title groups-section__title">Obiad</h2>
-            <div className="wedding-variants">
-              {groupsLunchVariants.map((variant) => (
-                <WeddingVariantCard key={variant.id} variant={variant} />
-              ))}
-            </div>
-            <ProgramGallery photos={[...groupsVegePhotos]} showCaptions={false} />
-            <div className="groups-wege content-block">
-              <h3>Warianty dań głównych wege</h3>
-              <ul>
-                {groupsVegeMains.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+            <div className="groups-lunch-intro content-block">
+              <p>
+                Przygotujemy obiad lub obiadokolację dopasowaną do liczebności, programu i budżetu Twojej
+                grupy. Możemy zaproponować dania z dziczyzny, klasyczne zestawy domowe albo wersje
+                wegetariańskie.
+              </p>
+              <p>Menu ustalamy indywidualnie – skontaktuj się z nami, a doradzimy najlepsze rozwiązanie.</p>
             </div>
           </div>
 
           <div className="groups-section fade-in">
             <h2 className="section__title groups-section__title">Ognisko</h2>
-            <div className="wedding-variants">
-              {groupsBonfireVariants.map((variant) => (
-                <WeddingVariantCard key={variant.id} variant={variant} />
-              ))}
+            <div className="groups-bonfire-card content-block">
+              <div className="groups-bonfire-card__image">
+                <img
+                  src="/images/groups-bonfire.png"
+                  alt="Ognisko dla grup na leśnej polanie"
+                  loading="lazy"
+                />
+              </div>
+              <div className="groups-bonfire-card__body">
+                <h3>Ognisko dla grup</h3>
+                <p>
+                  Na naszej polanie przy rezerwacie Parkowe zorganizujemy dla Was klimatyczne ognisko z
+                  miejscem do biesiadowania.
+                </p>
+                <p>
+                  <strong>Cena organizacji ogniska: 10 zł/os.</strong>
+                </p>
+                <ul className="groups-bonfire-card__prices">
+                  <li>
+                    <span>Pieczonki</span>
+                    <span className="groups-bonfire-card__price">35 zł/os.</span>
+                  </li>
+                  <li>
+                    <span>Kiełbaska + dodatki</span>
+                    <span className="groups-bonfire-card__price">20 zł/os.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -168,11 +182,7 @@ export function GroupsPage() {
           </div>
 
           <div className="content-block fade-in">
-            <p>
-              <strong>{SITE.manager}</strong> ·{' '}
-              <a href={`tel:${SITE.phone.replace(/\s/g, '')}`}>{SITE.phoneDisplay}</a> ·{' '}
-              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-            </p>
+            <OfferContact showLabel={false} />
           </div>
 
           <div className="offer-cta fade-in">

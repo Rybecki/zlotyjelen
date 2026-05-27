@@ -1,4 +1,5 @@
 import type { GroupsAttraction } from '../../data/groups';
+import { Button } from '../ui/Button';
 
 interface GroupsPriceListProps {
   items: GroupsAttraction[];
@@ -8,10 +9,23 @@ export function GroupsPriceList({ items }: GroupsPriceListProps) {
   return (
     <ul className="groups-price-list">
       {items.map((item) => (
-        <li key={item.name} className="groups-price-list__item">
+        <li
+          key={item.name}
+          className={`groups-price-list__item${item.rentalLink ? ' groups-price-list__item--rental' : ''}`}
+        >
           <div className="groups-price-list__main">
             <span className="groups-price-list__name">{item.name}</span>
-            <span className="groups-price-list__price">{item.price}</span>
+            {item.rentalLink ? (
+              <Button
+                to={item.rentalLink.to}
+                variant="primary"
+                className="groups-price-list__cta"
+              >
+                {item.rentalLink.label}
+              </Button>
+            ) : (
+              <span className="groups-price-list__price">{item.price}</span>
+            )}
           </div>
           {item.note && <p className="groups-price-list__note">{item.note}</p>}
         </li>

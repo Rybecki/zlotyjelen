@@ -159,8 +159,13 @@ export const groupsAlcohol = [
 
 export interface GroupsAttraction {
   name: string;
-  price: string;
+  price?: string;
   note?: string;
+  /** Zamiast ceny – przycisk do podstrony (np. wypożyczalnia) */
+  rentalLink?: {
+    to: string;
+    label: string;
+  };
 }
 
 export const groupsAttractionsPrimary: GroupsAttraction[] = [
@@ -224,6 +229,14 @@ export const groupsAttractionsSecondary: GroupsAttraction[] = [
   {
     name: 'Odnalezienie i naprawa uszkodzonego pojazdu',
     price: '600,00 zł netto',
+  },
+  {
+    name: 'Wynajem dmuchańca',
+    note: 'Kolorowe dmuchańce i place zabaw na imprezy, pikniki i eventy.',
+    rentalLink: {
+      to: '/wypozyczalnia',
+      label: 'Przejdź do wypożyczalni',
+    },
   },
 ];
 

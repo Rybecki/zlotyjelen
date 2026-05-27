@@ -774,8 +774,32 @@
   color: var(--color-text);
 }
 
+.wedding-extras-promo {
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-lg);
+}
+
+.wedding-extras-highlight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: var(--space-lg);
+  text-align: center;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--color-forest);
+}
+
+.wedding-extras-highlight__icon {
+  font-size: 1.75rem;
+  color: var(--color-gold);
+  flex-shrink: 0;
+}
+
 .wedding-extras-note {
-  margin-top: var(--space-md);
+  margin-top: var(--space-lg);
   text-align: center;
   color: var(--color-text-muted);
 }
@@ -815,44 +839,80 @@
   line-height: 1;
 }
 
-.groups-wege {
+.groups-lunch-intro {
+  max-width: 48rem;
+  margin-inline: auto;
   margin-top: var(--space-md);
-  background: var(--color-warm-white);
-  border: 1px solid var(--color-beige-dark);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
-  padding: var(--space-md);
+  text-align: center;
 }
 
-.groups-wege h3 {
-  margin: 0 0 var(--space-sm);
-  font-size: 1.1rem;
+.groups-lunch-intro p {
+  margin-bottom: var(--space-sm);
+  line-height: 1.7;
+}
+
+.groups-lunch-intro p:last-child {
+  margin-bottom: 0;
+  font-weight: 500;
   color: var(--color-forest);
 }
 
-.groups-wege ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+.groups-bonfire-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: var(--space-lg);
+  align-items: center;
 }
 
-.groups-wege li {
-  position: relative;
-  padding-left: 1rem;
+.groups-bonfire-card__image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.groups-bonfire-card__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.groups-bonfire-card__body h3 {
+  margin-top: 0;
+  margin-bottom: var(--space-sm);
+}
+
+.groups-bonfire-card__body p {
   margin-bottom: 0.5rem;
-  line-height: 1.55;
-  color: var(--color-text);
 }
 
-.groups-wege li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0.55em;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--color-gold);
+.groups-bonfire-card__body p:last-child {
+  margin-bottom: 0;
+}
+
+.groups-bonfire-card__prices {
+  list-style: none;
+  margin: var(--space-sm) 0 0;
+  padding: 0;
+}
+
+.groups-bonfire-card__prices li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--space-md);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--color-beige);
+}
+
+.groups-bonfire-card__prices li:last-child {
+  border-bottom: none;
+}
+
+.groups-bonfire-card__price {
+  font-weight: 600;
+  color: var(--color-forest);
+  white-space: nowrap;
 }
 
 .groups-drinks {
@@ -1007,6 +1067,21 @@
   white-space: nowrap;
 }
 
+.groups-price-list__item--rental .groups-price-list__main {
+  align-items: center;
+}
+
+.groups-price-list__cta.btn {
+  flex-shrink: 0;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: none;
+  border-width: 1px;
+  white-space: nowrap;
+}
+
 .groups-price-list__note {
   margin: 0.35rem 0 0;
   font-size: 0.85rem;
@@ -1029,6 +1104,13 @@
 .groups-closing p {
   line-height: 1.75;
   color: var(--color-text);
+}
+
+.school-closing > p {
+  max-width: 48rem;
+  margin-inline: auto;
+  text-align: center;
+  line-height: 1.75;
 }
 
 .contact-form {
@@ -1112,6 +1194,15 @@
   }
 
   .contact-page-grid address {
+    text-align: center;
+  }
+
+  .contact-page-grid .contact-details__item {
+    justify-content: center;
+  }
+
+  .contact-page-grid .contact-details__body {
+    align-items: center;
     text-align: center;
   }
 

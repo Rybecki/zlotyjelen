@@ -1,4 +1,5 @@
 import { SITE } from '../../data/site';
+import { ContactDetails } from '../ui/ContactDetails';
 import { Button } from '../ui/Button';
 import './ContactPreviewSection.css';
 
@@ -15,15 +16,10 @@ export function ContactPreviewSection() {
             Chętnie odpowiemy na pytania i pomożemy zaplanować pobyt, wycieczkę lub przyjęcie.
           </p>
           <div className="contact-preview__info">
-            <p>
-              <strong>Telefon:</strong>{' '}
-              <a href={`tel:${SITE.phone.replace(/\s/g, '')}`}>{SITE.phoneDisplay}</a>
-            </p>
-            <p>
-              <strong>E-mail:</strong> <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-            </p>
-            <p>
-              <strong>Godziny restauracji:</strong> {SITE.restaurantHours.weekdays}, {SITE.restaurantHours.weekend}
+            <ContactDetails showAddress={false} />
+            <p className="contact-preview__hours">
+              <strong>Godziny restauracji:</strong> {SITE.restaurantHours.weekdays},{' '}
+              {SITE.restaurantHours.weekend}
             </p>
           </div>
           <Button to="/kontakt" variant="primary">

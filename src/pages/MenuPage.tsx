@@ -23,7 +23,7 @@ const MENU_SECTION_ORDER = [
 const orderedMenuSections = MENU_SECTION_ORDER.map((id) =>
   menuRestaurantSections.find((section) => section.id === id),
 ).filter((section): section is (typeof menuRestaurantSections)[number] => Boolean(section));
-import { SITE } from '../data/site';
+import { OfferContact } from '../components/ui/OfferContact';
 import '../components/menu/MenuSection.css';
 import '../styles/offer-pages.css';
 
@@ -55,10 +55,9 @@ export function MenuPage() {
           <div className="content-block fade-in menu-page-footer-note">
             <p>
               Pełna oferta okolicznościowa i weselna dostępna na stronie{' '}
-              <Link to="/oferta/wesela">Oferta weselna</Link>. Pytania i rezerwacje:{' '}
-              <strong>{SITE.manager}</strong>, {SITE.phoneDisplay},{' '}
-              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+              <Link to="/oferta/wesela">Oferta weselna</Link>. Pytania i rezerwacje:
             </p>
+            <OfferContact showLabel={false} />
           </div>
 
           <div className="offer-cta fade-in">

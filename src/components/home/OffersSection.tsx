@@ -3,7 +3,7 @@ import './OffersSection.css';
 
 const offers = [
   {
-    to: '/oferta/szkoly',
+    to: '/oferta/wycieczki-szkolne',
     title: 'Wycieczki szkolne',
     desc: 'Pełne wyżywienie, sala konferencyjna, ognisko i programy edukacyjne w Jurze.',
     num: '01',
@@ -15,7 +15,7 @@ const offers = [
     num: '02',
   },
   {
-    to: '/oferta/grupy',
+    to: '/oferta/grupy-zorganizowane',
     title: 'Grupy zorganizowane',
     desc: 'Autorskie menu, ogniska, sala na 50 osób – dla firm i biur podróży.',
     num: '03',

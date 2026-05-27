@@ -14,7 +14,9 @@ import {
   weddingGallery,
   weddingHeroSlides,
 } from '../data/weddings';
-import { SITE } from '../data/site';
+import { OfferContact } from '../components/ui/OfferContact';
+import { RentalPromoCta } from '../components/rental/RentalPromoCta';
+import { dmuchanceRentalItem } from '../data/rentalPartners';
 import '../styles/offer-pages.css';
 
 const extras: BenefitItem[] = [
@@ -132,17 +134,31 @@ export function WeddingsPage() {
           <div className="content-block fade-in">
             <h2>Dodatkowe atrakcje</h2>
             <BenefitsList items={extras} />
+            <RentalPromoCta
+              className="wedding-extras-promo"
+              title={dmuchanceRentalItem.title}
+              description="Istnieje możliwość wynajęcia dmuchańca dla dzieci na czas wesela – atrakcja, która umili najmłodszym z gości przyjęcie."
+              image={dmuchanceRentalItem.image}
+              imageAlt={dmuchanceRentalItem.imageAlt}
+              to="/wypozyczalnia"
+              ctaLabel={dmuchanceRentalItem.ctaLabel}
+            />
+            <p className="wedding-extras-highlight">
+              <span
+                className="material-symbols-outlined wedding-extras-highlight__icon"
+                aria-hidden="true"
+              >
+                local_florist
+              </span>
+              Istnieje możliwość wystroju sali jako dodatkowej usługi.
+            </p>
             <p className="wedding-extras-note">
               <em>Ceny dodatkowych atrakcji wyceniane indywidualnie.</em>
             </p>
           </div>
 
           <div className="content-block fade-in">
-            <p>
-              Kontakt: <strong>{SITE.manager}</strong> ·{' '}
-              <a href={`tel:${SITE.phone.replace(/\s/g, '')}`}>{SITE.phoneDisplay}</a> ·{' '}
-              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-            </p>
+            <OfferContact />
           </div>
 
           <div className="offer-cta fade-in">

@@ -53,6 +53,8 @@ export const rentalPartnerItems: RentalPartnerItem[] = [
   },
 ];
 
+export const dmuchanceRentalItem = rentalPartnerItems.find((item) => item.id === 'dmuchance')!;
+
 const rentalHeroSlidePosition: Partial<Record<string, string>> = {
   'e-rowery': 'center 10%',
   kajaki: 'center 10%',

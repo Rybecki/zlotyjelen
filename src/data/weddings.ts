@@ -236,14 +236,36 @@ export const weddingDrinks = {
 };
 
 export const weddingHeroSlides = [
-  { src: '/images/wedding-flowers.png', alt: 'Kwiatowa dekoracja stołu', position: 'center' },
-  { src: '/images/wedding-cake.png', alt: 'Tort weselny ze szparklerami', position: 'center' },
+  {
+    src: '/images/wedding-hall.png',
+    alt: 'Przyjęcie weselne na tarasie – długi stół w drewnianej altanie',
+    position: 'center 45%',
+  },
+  {
+    src: '/images/wedding-table-2.png',
+    alt: 'Stół prezydialny z kwiatami i neonem „Z Tobą chcę oglądać świat”',
+    position: 'center 40%',
+  },
+  {
+    src: '/images/wedding-flowers.png',
+    alt: 'Elegancko nakryte stoły weselne z różową dekoracją',
+    position: 'center 45%',
+  },
 ] as const;
 
 export const weddingGallery = [
-  { src: '/images/wedding-hall.png', alt: 'Sala weselna w Złotym Jeleniu' },
-  { src: '/images/wedding-table-2.png', alt: 'Elegancko nakryty stół weselny' },
-  { src: '/images/wedding-flowers.png', alt: 'Kwiatowa dekoracja stołu' },
+  {
+    src: '/images/wedding-hall.png',
+    alt: 'Przyjęcie weselne na tarasie – długi stół w drewnianej altanie',
+  },
+  {
+    src: '/images/wedding-table-2.png',
+    alt: 'Stół prezydialny z kwiatami i neonem „Z Tobą chcę oglądać świat”',
+  },
+  {
+    src: '/images/wedding-flowers.png',
+    alt: 'Elegancko nakryte stoły weselne z różową dekoracją',
+  },
   { src: '/images/wedding-dish.png', alt: 'Danie z dziczyzną – Złoty Jeleń' },
   { src: '/images/wedding-desserts.png', alt: 'Bufet domowych słodkości' },
   { src: '/images/wedding-cake.png', alt: 'Tort weselny ze szparklerami' },

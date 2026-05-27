@@ -7,8 +7,7 @@ export const SITE = {
   addressFull: 'Kościuszki 99, Złoty Potok, Polska, 42-253',
   addressRegion: 'Jura Krakowsko-Częstochowska',
   phone: '+48 728 477 449',
-  phoneDisplay: '728 477 449',
-  email: 'sprzedaz@zlotyjelen.pl',
+  email: 'kontakt@zlotyjelen.pl',
   manager: 'Wiktoria Czerepak',
   restaurantHours: {
     weekdays: 'Pn–Pt: 12:00–21:00',

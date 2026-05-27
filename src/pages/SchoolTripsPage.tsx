@@ -4,7 +4,9 @@ import { PageDeerBackdrop } from '../components/ui/PageDeerBackdrop';
 import { ProgramGallery } from '../components/ui/ProgramGallery';
 import { BenefitsList } from '../components/ui/BenefitsList';
 import type { BenefitItem } from '../components/ui/BenefitsList';
-import { SITE } from '../data/site';
+import { OfferContact } from '../components/ui/OfferContact';
+import { RentalPromoCta } from '../components/rental/RentalPromoCta';
+import { dmuchanceRentalItem } from '../data/rentalPartners';
 import '../styles/offer-pages.css';
 
 const benefits: BenefitItem[] = [
@@ -258,17 +260,23 @@ export function SchoolTripsPage() {
             </div>
           </div>
 
-          <div className="content-block fade-in">
+          <RentalPromoCta
+            className="fade-in"
+            title={dmuchanceRentalItem.title}
+            description="Istnieje możliwość wynajęcia dmuchańca na czas wycieczki szkolnej – dodatkowa atrakcja dla uczniów podczas pobytu w Złotym Jeleniu."
+            image={dmuchanceRentalItem.image}
+            imageAlt={dmuchanceRentalItem.imageAlt}
+            to="/wypozyczalnia"
+            ctaLabel={dmuchanceRentalItem.ctaLabel}
+          />
+
+          <div className="content-block fade-in school-closing">
             <p>
               Służymy pomocą w realizacji własnych programów oraz polecamy nasze propozycje. Dopasujemy
               ceny noclegu oraz wyżywienia do Państwa budżetu. Zapraszamy szkoły, biura podróży i
               przewodników.
             </p>
-            <p>
-              Kontakt: <strong>{SITE.manager}</strong> ·{' '}
-              <a href={`tel:${SITE.phone.replace(/\s/g, '')}`}>{SITE.phoneDisplay}</a> ·{' '}
-              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-            </p>
+            <OfferContact />
           </div>
 
           <div className="offer-cta fade-in">

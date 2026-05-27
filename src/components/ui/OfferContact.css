@@ -1,0 +1,9 @@
+.offer-contact__label {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  color: var(--color-forest);
+}
+
+.offer-contact .contact-details__list {
+  margin: 0;
+}

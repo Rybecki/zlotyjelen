@@ -32,7 +32,7 @@ const offerContent: Record<
       'Propozycje: Zamek Ogrodzieniec lub Olsztyn, edukacja leśna',
     ],
     priceNote: 'Pn–Pt / Pt–Nd – dopasujemy menu do budżetu szkoły',
-    to: '/oferta/szkoly',
+    to: '/oferta/wycieczki-szkolne',
     cta: 'Zobacz ofertę szkolną',
   },
   wesela: {
@@ -54,13 +54,13 @@ const offerContent: Record<
     lead:
       'Autorskie menu z dziczyzny – burgery z jelenia, pstrągi, ogniska i strefa relaksu na dużej polanie.',
     highlights: [
-      'Obiadokolacje od 45 zł/os. – 4 warianty dań',
-      'Ognisko od 49 zł/os. · napoje bez limitu 15 zł/os.',
+      'Obiadokolacje od 45 zł/os. – menu szyte na miarę',
+      'Ognisko od 10 zł/os. · napoje bez limitu 15 zł/os.',
       'Sala konferencyjna 50 osób · 1 opiekun gratis / 15 osób',
       'Współpraca z biurami podróży i przewodnikami',
     ],
     priceNote: 'Realizujemy własne programy – elastyczne ceny noclegu',
-    to: '/oferta/grupy',
+    to: '/oferta/grupy-zorganizowane',
     cta: 'Oferta dla grup',
   },
 };

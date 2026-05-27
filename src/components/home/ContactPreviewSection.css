@@ -9,8 +9,12 @@
   margin: var(--space-md) 0;
 }
 
-.contact-preview__info p {
-  margin-bottom: 0.5rem;
+.contact-preview__info .contact-details {
+  margin-bottom: 0.75rem;
+}
+
+.contact-preview__hours {
+  margin: 0;
   color: var(--color-text-muted);
 }
 
@@ -55,5 +59,14 @@
   .contact-preview__grid .btn {
     margin-inline: auto;
     display: inline-flex;
+  }
+
+  .contact-preview__info .contact-details__item {
+    justify-content: center;
+  }
+
+  .contact-preview__info .contact-details__body {
+    align-items: center;
+    text-align: center;
   }
 }

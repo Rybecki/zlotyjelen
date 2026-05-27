@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SITE } from '../../data/site';
+import { ContactDetails } from '../ui/ContactDetails';
 import './Footer.css';
 
 function FacebookIcon() {
@@ -23,7 +24,7 @@ const quickLinks = [
   { to: '/', label: 'Strona główna' },
   { to: '/oferta/pokoje', label: 'Pokoje' },
   { to: '/menu', label: 'Menu restauracji' },
-  { to: '/oferta/szkoly', label: 'Wycieczki szkolne' },
+  { to: '/oferta/wycieczki-szkolne', label: 'Wycieczki szkolne' },
   { to: '/oferta/wesela', label: 'Wesela' },
   { to: '/atrakcje', label: 'Atrakcje' },
   { to: '/kontakt', label: 'Kontakt' },
@@ -59,13 +60,8 @@ export function Footer() {
         <div>
           <h3 className="footer__heading">Kontakt</h3>
           <address className="footer__contact">
-            <p>
-              <a href={`tel:${SITE.phone.replace(/\s/g, '')}`}>{SITE.phoneDisplay}</a>
-            </p>
-            <p>
-              <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
-            </p>
-            <p>{SITE.manager}</p>
+            <ContactDetails showAddress={false} />
+            <p className="footer__manager">{SITE.manager}</p>
           </address>
         </div>
 

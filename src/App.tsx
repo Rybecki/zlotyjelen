@@ -17,9 +17,9 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route path="oferta/pokoje" element={<RoomsPage />} />
-          <Route path="oferta/szkoly" element={<SchoolTripsPage />} />
+          <Route path="oferta/wycieczki-szkolne" element={<SchoolTripsPage />} />
           <Route path="oferta/wesela" element={<WeddingsPage />} />
-          <Route path="oferta/grupy" element={<GroupsPage />} />
+          <Route path="oferta/grupy-zorganizowane" element={<GroupsPage />} />
           <Route path="menu" element={<MenuPage />} />
           <Route path="atrakcje" element={<AttractionsPage />} />
           <Route path="wypozyczalnia" element={<RentalPage />} />
