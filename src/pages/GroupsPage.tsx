@@ -47,14 +47,15 @@ export function GroupsPage() {
               {rooms.map((room) => (
                 <article
                   key={room.id}
-                  className={`room-card${room.capacity === 2 || room.capacity === 4 ? ' room-card--dark' : ''}`}
+                  className={`room-card${room.capacity === 2 || room.capacity === 4 || room.capacity === 6 ? ' room-card--dark' : ''}`}
                 >
                   <div
                     className={`room-card__image${room.id === 'pokoj-1' ? ' room-card__image--1os' : ''}`}
                   >
                     <img src={room.image} alt={room.name} loading="lazy" width={400} height={280} />
                     <span className="room-card__badge">
-                      {room.capacity} {room.capacity === 1 ? 'osoba' : 'osoby'}
+                      {room.capacity}{' '}
+                      {room.capacity === 1 ? 'osoba' : room.capacity <= 4 ? 'osoby' : 'osób'}
                     </span>
                   </div>
                   <div className="room-card__body">

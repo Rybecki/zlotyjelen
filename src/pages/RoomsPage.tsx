@@ -1,6 +1,6 @@
 import { PageHero } from '../components/ui/PageHero';
 import { ProgramGallery } from '../components/ui/ProgramGallery';
-import { rooms, roomsBathroomGallery } from '../data/rooms';
+import { rooms, roomsBathroomGallery, roomCapacityRangeLabel } from '../data/rooms';
 import { Button } from '../components/ui/Button';
 import '../styles/offer-pages.css';
 
@@ -34,7 +34,8 @@ export function RoomsPage() {
             </div>
             <p>
               Złoty Jeleń dysponuje <strong>95 miejscami noclegowymi w 25 pokojach</strong> o
-              zróżnicowanej pojemności (1, 2, 3 i 4-osobowe). Taka skala sprawia, że jesteśmy
+              zróżnicowanej pojemności ({roomCapacityRangeLabel}). W pokojach wieloosobowych są wyłącznie
+              łóżka jednoosobowe. Taka skala sprawia, że jesteśmy
               doskonałą bazą dla <strong>wycieczek szkolnych</strong>,{' '}
               <strong>grup zorganizowanych</strong>, wesel, imprez firmowych i innych pobytów
               grupowych – zapewniamy zakwaterowanie wielu uczestników w jednym miejscu, blisko
@@ -48,8 +49,8 @@ export function RoomsPage() {
             </p>
             <p>
               Jednocześnie <strong>goście indywidualni</strong>, pary i rodziny również znajdą u nas
-              miejsce na spokojny wypoczynek. Każdy pokój ma prywatną łazienkę, telewizor i
-              bezpłatne WiFi – to komfortowa baza wypadowa na szlaki, zamki i rezerwat Parkowe w
+              miejsce na spokojny wypoczynek. Każdy pokój ma prywatną łazienkę i bezpłatne WiFi – to
+              komfortowa baza wypadowa na szlaki, zamki i rezerwat Parkowe w
               Złotym Potoku.
             </p>
           </div>

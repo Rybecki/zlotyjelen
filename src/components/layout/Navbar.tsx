@@ -9,6 +9,7 @@ const offerLinks = [
   { to: '/oferta/pokoje', label: 'Pokoje gościnne' },
   { to: '/oferta/wycieczki-szkolne', label: 'Oferta dla wycieczek szkolnych' },
   { to: '/oferta/wesela', label: 'Oferta weselna' },
+  { to: '/oferta/okolicznosciowa', label: 'Oferta okolicznościowa' },
   { to: '/oferta/grupy-zorganizowane', label: 'Oferta dla grup zorganizowanych' },
 ];
 

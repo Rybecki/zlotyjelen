@@ -7,6 +7,8 @@ export interface Room {
   description: string;
 }
 
+export const roomCapacityRangeLabel = '1, 2, 3, 4, 5 i 6-osobowe';
+
 export const rooms: Room[] = [
   {
     id: 'pokoj-1',
@@ -39,10 +41,28 @@ export const rooms: Room[] = [
     id: 'pokoj-4',
     name: 'Pokój 4-osobowy',
     capacity: 4,
-    amenities: ['Łazienka', 'WiFi', 'Dwa łóżka'],
+    amenities: ['Łazienka', 'WiFi', 'Cztery łóżka jednoosobowe'],
     image: '/images/room-4os.png',
     description:
-      'Największy pokój w ofercie – idealny dla rodzin i grup czteroosobowych. Wszystkie pokoje z prywatną łazienką.',
+      'Pokój dla czterech gości wyłącznie z łóżkami jednoosobowymi – wygodny dla grup szkolnych i wycieczek. Prywatna łazienka w pokoju.',
+  },
+  {
+    id: 'pokoj-5',
+    name: 'Pokój 5-osobowy',
+    capacity: 5,
+    amenities: ['Łazienka', 'WiFi', 'Pięć łóżek jednoosobowych'],
+    image: '/images/room-5os.png',
+    description:
+      'Przestronny pokój z pięcioma łóżkami jednoosobowymi – tylko pojedyncze miejsca noclegowe, bez łóżek małżeńskich. Idealny dla większych grup szkolnych.',
+  },
+  {
+    id: 'pokoj-6',
+    name: 'Pokój 6-osobowy',
+    capacity: 6,
+    amenities: ['Łazienka', 'WiFi', 'Sześć łóżek jednoosobowych'],
+    image: '/images/room-6os.png',
+    description:
+      'Największy pokój w ofercie – sześć łóżek jednoosobowych i miejsce do wspólnego pobytu. Sprawdza się przy najliczniejszych grupach i wycieczkach.',
   },
 ];
 

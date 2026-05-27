@@ -4,19 +4,13 @@ import { Button } from '../components/ui/Button';
 import { BenefitsList } from '../components/ui/BenefitsList';
 import type { BenefitItem } from '../components/ui/BenefitsList';
 import { ProgramGallery } from '../components/ui/ProgramGallery';
-import { WeddingVariantCard } from '../components/wedding/WeddingVariantCard';
-import {
-  weddingIntro,
-  weddingVariants,
-  weddingBuffetHot,
-  weddingBuffetCold,
-  weddingDrinks,
-  weddingGallery,
-  weddingHeroSlides,
-} from '../data/weddings';
+import { CelebrationMenu } from '../components/celebration/CelebrationMenu';
+import { weddingMenuIntro } from '../data/celebrationMenu';
+import { weddingGallery, weddingHeroSlides } from '../data/weddings';
 import { OfferContact } from '../components/ui/OfferContact';
 import { RentalPromoCta } from '../components/rental/RentalPromoCta';
 import { dmuchanceRentalItem } from '../data/rentalPartners';
+import '../components/celebration/CelebrationMenu.css';
 import '../styles/offer-pages.css';
 
 const extras: BenefitItem[] = [
@@ -34,50 +28,6 @@ const extras: BenefitItem[] = [
   { icon: 'tent', text: 'Ekskluzywne namioty dzwonkowe – Księżycowe Pole' },
 ];
 
-function BuffetBlock({
-  title,
-  hint,
-  price,
-  priceLabel,
-  largeItemPrice,
-  items,
-}: {
-  title: string;
-  hint?: string;
-  price?: string;
-  priceLabel?: string;
-  largeItemPrice?: boolean;
-  items: string[];
-}) {
-  const buffetClass = [
-    'wedding-buffet',
-    'content-block',
-    largeItemPrice && 'wedding-buffet--hot',
-  ]
-    .filter(Boolean)
-    .join(' ');
-
-  return (
-    <div className={buffetClass}>
-      <header className="wedding-buffet__head">
-        <h3>
-          {title}
-          {hint && <span className="wedding-buffet__hint"> ({hint})</span>}
-        </h3>
-        {price && <p className="wedding-buffet__price">{price}</p>}
-      </header>
-      <ul className="wedding-buffet__list">
-        {items.map((item) => (
-          <li key={item} className="wedding-buffet__item">
-            <span>{item}</span>
-            {priceLabel && <span className="wedding-buffet__item-price">{priceLabel}</span>}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
 export function WeddingsPage() {
   return (
     <PageDeerBackdrop>
@@ -90,41 +40,7 @@ export function WeddingsPage() {
       />
       <section className="section">
         <div className="container">
-          <div className="content-block fade-in wedding-intro">
-            {weddingIntro.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
-            ))}
-          </div>
-
-          <div className="wedding-variants fade-in">
-            {weddingVariants.map((variant) => (
-              <WeddingVariantCard key={variant.id} variant={variant} />
-            ))}
-          </div>
-
-          <div className="wedding-buffets fade-in">
-            <h2 className="section__title wedding-buffets__title">Bufety dodatkowe</h2>
-            <BuffetBlock
-              title={weddingBuffetHot.title}
-              hint={weddingBuffetHot.hint}
-              priceLabel={weddingBuffetHot.priceLabel}
-              largeItemPrice
-              items={weddingBuffetHot.items}
-            />
-            <BuffetBlock
-              title={weddingBuffetCold.title}
-              hint={weddingBuffetCold.hint}
-              price={weddingBuffetCold.price}
-              items={weddingBuffetCold.items}
-            />
-            <div className="wedding-buffet content-block">
-              <header className="wedding-buffet__head">
-                <h3>Napoje</h3>
-                <p className="wedding-buffet__price">{weddingDrinks.price}</p>
-              </header>
-              <p className="wedding-buffet__note">{weddingDrinks.text}</p>
-            </div>
-          </div>
+          <CelebrationMenu intro={weddingMenuIntro} introLead="first" showMenuTitle={false} />
 
           <div className="content-block fade-in">
             <h2 className="section__title">Złoty Jeleń w obiektywie</h2>

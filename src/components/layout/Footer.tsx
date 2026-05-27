@@ -10,6 +10,7 @@ const quickLinks = [
   { to: '/menu', label: 'Menu restauracji' },
   { to: '/oferta/wycieczki-szkolne', label: 'Wycieczki szkolne' },
   { to: '/oferta/wesela', label: 'Wesela' },
+  { to: '/oferta/okolicznosciowa', label: 'Okoliczności' },
   { to: '/atrakcje', label: 'Atrakcje' },
   { to: '/kontakt', label: 'Kontakt' },
 ];

@@ -7,6 +7,7 @@ import type { BenefitItem } from '../components/ui/BenefitsList';
 import { OfferContact } from '../components/ui/OfferContact';
 import { RentalPromoCta } from '../components/rental/RentalPromoCta';
 import { dmuchanceRentalItem } from '../data/rentalPartners';
+import { schoolTripPackages } from '../data/schoolTrips';
 import '../styles/offer-pages.css';
 
 const benefits: BenefitItem[] = [
@@ -44,28 +45,7 @@ const benefits: BenefitItem[] = [
   },
   {
     icon: 'bed',
-    text: 'Nocleg w pokojach 1, 2, 3 i 4-osobowych – wszystkie z łazienkami',
-  },
-];
-
-const packages = [
-  {
-    name: 'Nocleg + Śniadanie (BB)',
-    desc: 'Śniadanie serwowane w formie bufetu: pieczywo, wędliny, sery, kiełbaski, jajecznica, dżemy, jogurty, płatki, napoje oraz lokalne przysmaki.',
-    weekday: '105 zł/os.',
-    weekend: '115 zł/os.',
-  },
-  {
-    name: 'Nocleg + Śniadanie + Obiadokolacja (HB)',
-    desc: 'Obiadokolacja składająca się z dwóch dań: zupy oraz dania głównego. Możliwość ustalenia indywidualnego menu.',
-    weekday: '125 zł/os.',
-    weekend: '135 zł/os.',
-  },
-  {
-    name: 'Nocleg + Pełne Wyżywienie (FB)',
-    desc: 'Śniadania, obiady i kolacja bazująca na lokalnych produktach.',
-    weekday: '149 zł/os.',
-    weekend: '159 zł/os.',
+    text: 'Nocleg w pokojach 1–6-osobowych (łóżka jednoosobowe) – wszystkie z łazienkami',
   },
 ];
 
@@ -195,8 +175,8 @@ export function SchoolTripsPage() {
                   </tr>
                 </thead>
                 <tbody>
-                  {packages.map((pkg) => (
-                    <tr key={pkg.name}>
+                  {schoolTripPackages.map((pkg) => (
+                    <tr key={pkg.id}>
                       <td>
                         <strong>{pkg.name}</strong>
                         <br />

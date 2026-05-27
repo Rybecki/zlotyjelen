@@ -54,8 +54,10 @@ export function MenuPage() {
 
           <div className="content-block fade-in menu-page-footer-note">
             <p>
-              Pełna oferta okolicznościowa i weselna dostępna na stronie{' '}
-              <Link to="/oferta/wesela">Oferta weselna</Link>. Pytania i rezerwacje:
+              Pełna oferta weselna i okolicznościowa:{' '}
+              <Link to="/oferta/wesela">wesela</Link>,{' '}
+              <Link to="/oferta/okolicznosciowa">przyjęcia okolicznościowe</Link>. Pytania i
+              rezerwacje:
             </p>
             <OfferContact showLabel={false} />
           </div>
@@ -64,7 +66,7 @@ export function MenuPage() {
             <Button to="/kontakt" variant="primary">
               Rezerwacja stolika
             </Button>
-            <Button to="/oferta/wesela" variant="outline-dark">
+            <Button to="/oferta/okolicznosciowa" variant="outline-dark">
               Oferta okolicznościowa
             </Button>
           </div>

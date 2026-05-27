@@ -1,6 +1,6 @@
 .rooms-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
   align-items: stretch;
 }
@@ -31,6 +31,7 @@
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  margin-bottom: 3px;
 }
 
 .room-card__image img {
@@ -117,7 +118,7 @@
   margin-top: var(--space-lg);
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
   .rooms-grid {
     grid-template-columns: repeat(2, 1fr);
   }

@@ -12,6 +12,7 @@
 .page-hero--rooms,
 .page-hero--school,
 .page-hero--wedding,
+.page-hero--occasion,
 .page-hero--groups,
 .page-hero--attractions,
 .page-hero--rental,
@@ -23,6 +24,7 @@
 }
 
 .page-hero--wedding .page-hero__content,
+.page-hero--occasion .page-hero__content,
 .page-hero--groups .page-hero__content,
 .page-hero--attractions .page-hero__content,
 .page-hero--rental .page-hero__content,
@@ -238,9 +240,10 @@
 }
 
 .rooms-detail-grid {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  align-items: stretch;
 }
 
 .rooms-detail-grid + .groups-section {
@@ -248,12 +251,12 @@
 }
 
 .room-detail {
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: var(--space-lg);
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   padding: var(--space-md);
   background: var(--color-warm-white);
+  border: 1px solid rgba(212, 184, 118, 0.55);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-soft);
 }
@@ -263,6 +266,7 @@
   aspect-ratio: 4/3;
   object-fit: cover;
   width: 100%;
+  margin-bottom: 3px;
 }
 
 .room-detail__image--1os {
@@ -270,8 +274,14 @@
 }
 
 .room-detail h2 {
-  font-size: 1.75rem;
+  font-size: 1.25rem;
   margin-bottom: 0.25rem;
+}
+
+.room-detail > p:not(.room-detail__capacity) {
+  flex: 1;
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 .room-detail__capacity {
@@ -1179,9 +1189,21 @@
   margin-top: 1.5rem;
 }
 
-@media (max-width: 768px) {
-  .room-detail {
+@media (max-width: 900px) {
+  .rooms-detail-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .rooms-detail-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .rooms-detail-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .contact-page-grid {
@@ -1225,4 +1247,93 @@
 .contact-page__hours-note {
   color: var(--color-text-muted);
   font-size: 0.9rem;
+}
+
+/* Oferta okolicznościowa – tło strony */
+.page-occasion.offer-page-deer {
+  position: relative;
+}
+
+.page-occasion.offer-page-deer::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(250, 248, 245, 0.92) 0%, rgba(250, 248, 245, 0.88) 100%),
+    url('/images/occasion-3.png') center / cover no-repeat;
+  opacity: 0.35;
+}
+
+.page-occasion .offer-page-deer__content {
+  position: relative;
+  z-index: 1;
+}
+
+.section--occasion {
+  position: relative;
+}
+
+.occasion-lead {
+  max-width: 44rem;
+  margin-inline: auto;
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.occasion-lead p {
+  margin: 0 0 var(--space-sm);
+  line-height: 1.75;
+  font-size: 1.05rem;
+  color: var(--color-forest);
+}
+
+.occasion-lead p:first-child {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.occasion-lead p:last-child {
+  margin-bottom: 0;
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.page-hero--occasion .page-hero__slides {
+  opacity: 0.45;
+}
+
+.occasion-gallery-block {
+  margin-bottom: var(--space-sm);
+}
+
+.occasion-post-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.occasion-extras-promo {
+  margin-top: 0;
+}
+
+.occasion-attractions-cta {
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.occasion-attractions-cta p {
+  margin: 0 0 var(--space-md);
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+.occasion-attractions-cta__action {
+  margin: 0;
 }

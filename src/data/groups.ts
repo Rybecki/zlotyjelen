@@ -22,7 +22,7 @@ export const groupsAccommodation: WeddingVariant = {
   title: 'Pakiet nocleg + śniadanie',
   price: '125 zł/os.',
   intro: [
-    'Nocleg w pokoju 1, 2, 3 lub 4-osobowym z obfitym śniadaniem w formie bufetowej.',
+    'Nocleg w pokoju 1, 2, 3, 4, 5 lub 6-osobowym (łóżka jednoosobowe) z obfitym śniadaniem w formie bufetowej.',
     'Układ pokoi do ustalenia.',
   ],
   sections: [],

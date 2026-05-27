@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { Button } from '../ui/Button';
+import { schoolTripPriceHighlights } from '../../data/schoolTrips';
 import './OffersCTASection.css';
 
-type OfferTab = 'szkoly' | 'wesela' | 'grupy';
+type OfferTab = 'szkoly' | 'wesela' | 'okolicznosci' | 'grupy';
 
 const tabs: { id: OfferTab; label: string }[] = [
   { id: 'szkoly', label: 'Wycieczki szkolne' },
   { id: 'wesela', label: 'Oferta weselna' },
+  { id: 'okolicznosci', label: 'Okoliczności' },
   { id: 'grupy', label: 'Grupy zorganizowane' },
 ];
 
@@ -26,9 +28,9 @@ const offerContent: Record<
     lead:
       'Kompleksowa obsługa grup wycieczkowych – wyżywienie, noclegi, sala na 50 osób, ognisko i gotowe programy 2-dniowe.',
     highlights: [
-      'Pakiety BB od 105 zł, HB od 125 zł, FB od 149 zł/os.',
+      ...schoolTripPriceHighlights,
       '1 opiekun gratis na 15 uczestników · darmowy parking',
-      'Pokoje 1–4 osobowe z łazienkami · WiFi na całym obiekcie',
+      'Pokoje 1–6-osobowe (łóżka jednoosobowe) · łazienki · WiFi',
       'Propozycje: Zamek Ogrodzieniec lub Olsztyn, edukacja leśna',
     ],
     priceNote: 'Pn–Pt / Pt–Nd – dopasujemy menu do budżetu szkoły',
@@ -40,14 +42,28 @@ const offerContent: Record<
     lead:
       'Wesele inne niż zwykłe – dania z dziczyzny i lokalnych produktów, sala na 120+ gości, bliskość natury w Złotym Potoku.',
     highlights: [
-      'Menu od 139 zł/os. – warianty I, II i III do 259 zł',
-      'Bufety gorące i zimne, napoje bez limitu',
-      'Komunie, chrzciny, jubileusze, wieczory panieńskie i kawalerskie',
+      'Zupy od 16 zł/os. · dania główne 55–63 zł/os.',
+      'Przekąski, desery i słodki bufet do wyboru',
+      'Oferta barowa w promocyjnych cenach',
       'Dodatki: grill na polanie, pieczony dzik, fotobudka, DJ',
     ],
-    priceNote: 'Przykładowe menu 270 zł/os. · modyfikacje dla vegetarian',
+    priceNote: 'Menu dopasowane indywidualnie do liczby gości i budżetu',
     to: '/oferta/wesela',
     cta: 'Sprawdź ofertę weselną',
+  },
+  okolicznosci: {
+    title: 'Przyjęcia okolicznościowe',
+    lead:
+      'Wyjątkowe chwile zasługują na wyjątkową oprawę – chrzciny, komunie, urodziny i jubileusze w Złotym Jeleniu.',
+    highlights: [
+      'To samo elastyczne menu co na weselach',
+      'Komunie, chrzciny, wieczory kawalerskie i panieńskie',
+      'Sala na ponad 120 osób w rezerwacie Parkowe',
+      'Promocyjne ceny barowe podczas przyjęć',
+    ],
+    priceNote: 'Indywidualne dopasowanie menu i oprawy wydarzenia',
+    to: '/oferta/okolicznosciowa',
+    cta: 'Oferta okolicznościowa',
   },
   grupy: {
     title: 'Grupy zorganizowane i firmy',

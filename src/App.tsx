@@ -4,6 +4,7 @@ import { HomePage } from './pages/HomePage';
 import { RoomsPage } from './pages/RoomsPage';
 import { SchoolTripsPage } from './pages/SchoolTripsPage';
 import { WeddingsPage } from './pages/WeddingsPage';
+import { OccasionsPage } from './pages/OccasionsPage';
 import { GroupsPage } from './pages/GroupsPage';
 import { MenuPage } from './pages/MenuPage';
 import { AttractionsPage } from './pages/AttractionsPage';
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="oferta/pokoje" element={<RoomsPage />} />
           <Route path="oferta/wycieczki-szkolne" element={<SchoolTripsPage />} />
           <Route path="oferta/wesela" element={<WeddingsPage />} />
+          <Route path="oferta/okolicznosciowa" element={<OccasionsPage />} />
           <Route path="oferta/grupy-zorganizowane" element={<GroupsPage />} />
           <Route path="menu" element={<MenuPage />} />
           <Route path="atrakcje" element={<AttractionsPage />} />

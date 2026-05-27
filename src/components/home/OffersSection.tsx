@@ -1,24 +1,31 @@
 import { Link } from 'react-router-dom';
+import { schoolTripPackagesSummary } from '../../data/schoolTrips';
 import './OffersSection.css';
 
 const offers = [
   {
     to: '/oferta/wycieczki-szkolne',
     title: 'Wycieczki szkolne',
-    desc: 'Pełne wyżywienie, sala konferencyjna, ognisko i programy edukacyjne w Jurze.',
+    desc: `${schoolTripPackagesSummary} Sala konferencyjna, ognisko i programy edukacyjne w Jurze.`,
     num: '01',
   },
   {
     to: '/oferta/wesela',
-    title: 'Wesela i przyjęcia',
-    desc: 'Wesele w sercu rezerwatu – menu z dziczyzny, bufety i wyjątkowa oprawa.',
+    title: 'Wesela',
+    desc: 'Wesele w sercu rezerwatu – menu z lokalnych produktów i dziczyzny, sala na 120+ gości.',
     num: '02',
+  },
+  {
+    to: '/oferta/okolicznosciowa',
+    title: 'Przyjęcia okolicznościowe',
+    desc: 'Komunie, chrzciny, urodziny i jubileusze – smaczne menu i przyjazna atmosfera.',
+    num: '03',
   },
   {
     to: '/oferta/grupy-zorganizowane',
     title: 'Grupy zorganizowane',
     desc: 'Autorskie menu, ogniska, sala na 50 osób – dla firm i biur podróży.',
-    num: '03',
+    num: '04',
   },
 ];
 
