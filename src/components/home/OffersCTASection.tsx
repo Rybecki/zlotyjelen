@@ -26,12 +26,12 @@ const offerContent: Record<
   szkoly: {
     title: 'Wycieczki szkolne na Jurze',
     lead:
-      'Kompleksowa obsługa grup wycieczkowych – wyżywienie, noclegi, sala na 50 osób, ognisko i gotowe programy 2-dniowe.',
+      'Kompleksowa obsługa grup wycieczkowych – wyżywienie, noclegi, sala na 100 osób, ognisko i gotowe programy 2-3 dniowe.',
     highlights: [
       ...schoolTripPriceHighlights,
       '1 opiekun gratis na 15 uczestników · darmowy parking',
       'Pokoje 1–6-osobowe (łóżka jednoosobowe) · łazienki · WiFi',
-      'Propozycje: Zamek Ogrodzieniec lub Olsztyn, edukacja leśna',
+      'Propozycje: Zamek Ogrodzieniec lub Olsztyn, edukacja leśno-przyrodnicza',
     ],
     priceNote: 'Pn–Pt / Pt–Nd – dopasujemy menu do budżetu szkoły',
     to: '/oferta/wycieczki-szkolne',
@@ -42,7 +42,7 @@ const offerContent: Record<
     lead:
       'Wesele inne niż zwykłe – dania z dziczyzny i lokalnych produktów, sala na 120+ gości, bliskość natury w Złotym Potoku.',
     highlights: [
-      'Zupy od 16 zł/os. · dania główne 55–63 zł/os.',
+      'Zupy od 19 zł/os. · dania główne 90–120 zł/os.',
       'Przekąski, desery i słodki bufet do wyboru',
       'Oferta barowa w promocyjnych cenach',
       'Dodatki: grill na polanie, pieczony dzik, fotobudka, DJ',

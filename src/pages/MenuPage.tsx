@@ -6,16 +6,16 @@ import { MenuSection } from '../components/menu/MenuSection';
 import { menuRestaurantSections } from '../data/menuRestaurant';
 
 const MENU_SECTION_ORDER = [
-  'pierogi',
+  'ryby',
+  'przystawki',
   'dania-glowne',
   'zupy',
-  'przystawki',
-  'napoje-cieple',
-  'desery',
+  'pierogi',
   'burgery',
-  'ryby',
-  'napoje-zimne',
+  'desery',
   'dania-dzieci',
+  'napoje-cieple',
+  'napoje-zimne',
   'piwa-bezalkoholowe',
   'piwa-beczkowe',
 ] as const;

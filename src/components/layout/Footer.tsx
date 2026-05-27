@@ -8,6 +8,7 @@ const quickLinks = [
   { to: '/', label: 'Strona główna' },
   { to: '/oferta/pokoje', label: 'Pokoje' },
   { to: '/menu', label: 'Menu restauracji' },
+  { to: '/oferta/zielone-szkoly', label: 'Zielone szkoły' },
   { to: '/oferta/wycieczki-szkolne', label: 'Wycieczki szkolne' },
   { to: '/oferta/wesela', label: 'Wesela' },
   { to: '/oferta/okolicznosciowa', label: 'Okoliczności' },

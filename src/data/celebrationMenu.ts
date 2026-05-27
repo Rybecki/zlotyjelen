@@ -22,7 +22,7 @@ export const occasionPageLead = [
 export const celebrationMenuSections: CelebrationMenuSection[] = [
   {
     title: 'Zupy',
-    priceNote: 'Do wyboru jedna pozycja w cenie 16 zł/os.',
+    priceNote: 'Do wyboru jedna pozycja w cenie 19 zł/os.',
     items: [
       'Domowy rosół z dzikiego ptactwa z makaronem, młodą marchewką oraz natką pietruszki.',
       'Aromatyczny krem ze świeżych pomidorów podany z ziołowymi grzankami i świeżą bazylią.',
@@ -32,7 +32,7 @@ export const celebrationMenuSections: CelebrationMenuSection[] = [
   {
     title: 'Dania główne',
     priceNote:
-      'Podawane w formie półmisków. Trzy pozycje do wyboru w cenie 55 zł/os. Cztery pozycje do wyboru w cenie 63 zł/os.',
+      'Podawane w formie półmisków. Trzy pozycje do wyboru w cenie 90 zł/os. Cztery pozycje do wyboru w cenie 120 zł/os.',
     items: [
       'Tradycyjny kotlet schabowy w złocistej panierce.',
       'Staropolska pieczeń z karkówki w aksamitnym sosie z suszoną śliwką.',
@@ -49,7 +49,7 @@ export const celebrationMenuSections: CelebrationMenuSection[] = [
   },
   {
     title: 'Dodatki',
-    priceNote: 'Powyższe dodatki w cenie 14 zł/os.',
+    priceNote: 'Powyższe dodatki w cenie 17,50 zł/os.',
     items: [
       'Młode ziemniaki podane z ziołowym masłem i świeżym koprem.',
       'Kluski śląskie podawane z masłem.',
@@ -59,7 +59,7 @@ export const celebrationMenuSections: CelebrationMenuSection[] = [
   },
   {
     title: 'Przekąski',
-    priceNote: 'Podawane do stołu lub na bufecie. Do wyboru sześć pozycji w cenie 42 zł/os.',
+    priceNote: 'Podawane do stołu lub na bufecie. Do wyboru w cenie 18 zł za pozycję.',
     items: [
       'Selekcja regionalnych wędlin i mięs.',
       'Tymbaliki drobiowe w galarecie z młodymi warzywami korzennymi.',
@@ -76,7 +76,7 @@ export const celebrationMenuSections: CelebrationMenuSection[] = [
   },
   {
     title: 'Desery',
-    priceNote: 'Do wyboru dowolna pozycja w cenie 18 zł/os.',
+    priceNote: 'Do wyboru dowolna pozycja w cenie 23 zł/os.',
     items: [
       'Muffinki z płynną czekoladą podawane na ciepło z lodami śmietankowymi i bitą śmietaną.',
       'Krucha tarta pod kruszonką z owocami sezonowymi i bezą.',
@@ -86,7 +86,7 @@ export const celebrationMenuSections: CelebrationMenuSection[] = [
   },
   {
     title: 'Słodki bufet',
-    priceNote: 'Do wyboru cztery pozycje w cenie 42 zł/os.',
+    priceNote: 'Do wyboru w cenie 18 zł za pozycję.',
     items: [
       'Selekcja domowych ciast.',
       'Delikatna panna cotta waniliowa muśnięta pianą z owoców leśnych.',
@@ -98,10 +98,10 @@ export const celebrationMenuSections: CelebrationMenuSection[] = [
 ];
 
 export const celebrationBarBeers: CelebrationBarItem[] = [
-  { name: 'Piwo Kozel Ležák 0,5 l', price: '8 zł' },
-  { name: 'Piwo Kozel Černý 0,5 l', price: '8 zł' },
-  { name: 'Piwo Książęce Złote Pszeniczne 0,5 l', price: '8 zł' },
-  { name: 'Wódka Wyborowa 0,7 l', price: '80 zł' },
+  { name: 'Piwo Kozel Ležák 0,5 l', price: '13 zł' },
+  { name: 'Piwo Kozel Černý 0,5 l', price: '13 zł' },
+  { name: 'Piwo Książęce Złote Pszeniczne 0,5 l', price: '13 zł' },
+  { name: 'Wódka Wyborowa 0,7 l', price: '100 zł' },
   { name: 'Wódka Ostoya 0,7 l', price: '100 zł' },
   { name: 'Jack Daniels 0,7 l', price: '200 zł' },
   { name: 'Jameson 0,7 l', price: '180 zł' },

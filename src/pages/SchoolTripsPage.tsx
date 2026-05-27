@@ -146,13 +146,21 @@ const programB = {
   ],
 };
 
-export function SchoolTripsPage() {
+interface SchoolTripsPageProps {
+  heroTitle?: string;
+  inflatableDescription?: string;
+}
+
+export function SchoolTripsPage({
+  heroTitle = 'Oferta dla wycieczek szkolnych',
+  inflatableDescription = 'Istnieje możliwość wynajęcia dmuchańca na czas wycieczki szkolnej – dodatkowa atrakcja dla uczniów podczas pobytu w Złotym Jeleniu.',
+}: SchoolTripsPageProps) {
   return (
     <PageDeerBackdrop>
       <PageHero
         variant="offer"
         className="page-hero--school"
-        title="Oferta dla wycieczek szkolnych"
+        title={heroTitle}
         subtitle="Edukacja, natura i komfortowy pobyt w sercu Jury"
         slides={schoolHeroSlides}
       />
@@ -243,7 +251,7 @@ export function SchoolTripsPage() {
           <RentalPromoCta
             className="fade-in"
             title={dmuchanceRentalItem.title}
-            description="Istnieje możliwość wynajęcia dmuchańca na czas wycieczki szkolnej – dodatkowa atrakcja dla uczniów podczas pobytu w Złotym Jeleniu."
+            description={inflatableDescription}
             image={dmuchanceRentalItem.image}
             imageAlt={dmuchanceRentalItem.imageAlt}
             to="/wypozyczalnia"

@@ -7,6 +7,7 @@ import './Navbar.css';
 
 const offerLinks = [
   { to: '/oferta/pokoje', label: 'Pokoje gościnne' },
+  { to: '/oferta/zielone-szkoly', label: 'Oferta dla zielonych szkół' },
   { to: '/oferta/wycieczki-szkolne', label: 'Oferta dla wycieczek szkolnych' },
   { to: '/oferta/wesela', label: 'Oferta weselna' },
   { to: '/oferta/okolicznosciowa', label: 'Oferta okolicznościowa' },

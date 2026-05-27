@@ -1,5 +1,6 @@
 import type { WeddingVariant } from './weddings';
 import { rooms } from './rooms';
+import { celebrationBarBeers, celebrationBarWines } from './celebrationMenu';
 
 const room3 = rooms.find((r) => r.id === 'pokoj-3')!;
 
@@ -146,16 +147,8 @@ export const groupsSoftDrinks = {
   ],
 };
 
-export const groupsAlcohol = [
-  { name: 'Piwo Kozel Ležák 0,5 l', price: '9 zł' },
-  { name: 'Piwo Kozel Černý 0,5 l', price: '9 zł' },
-  { name: 'Piwo Książęce Złote Pszeniczne 0,5 l', price: '9 zł' },
-  { name: 'Wódka Wyborowa 0,7 l', price: '80 zł' },
-  { name: 'Wódka Ostoya 0,7 l', price: '100 zł' },
-  { name: 'Jack Daniels 0,7 l', price: '200 zł' },
-  { name: 'Jameson 0,7 l', price: '180 zł' },
-  { name: "Dewar's 0,7 l", price: '150 zł' },
-];
+export const groupsAlcoholBeers = celebrationBarBeers;
+export const groupsAlcoholWines = celebrationBarWines;
 
 export interface GroupsAttraction {
   name: string;

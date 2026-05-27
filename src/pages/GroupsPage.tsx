@@ -8,7 +8,8 @@ import { rooms, roomsBathroomGallery } from '../data/rooms';
 import {
   groupsAccommodation,
   groupsSoftDrinks,
-  groupsAlcohol,
+  groupsAlcoholBeers,
+  groupsAlcoholWines,
   groupsAttractionsPrimary,
   groupsAttractionsSecondary,
   groupsClosing,
@@ -143,10 +144,26 @@ export function GroupsPage() {
                 <p className="groups-drinks__promo">
                   <em>Specjalne promocyjne ceny.</em>
                 </p>
+                <h4 className="groups-drinks__subtitle">Piwa i alkohole</h4>
                 <div className="table-scroll-wrap">
                   <table className="price-table groups-drinks__table data-table--cards">
                     <tbody>
-                      {groupsAlcohol.map((row) => (
+                      {groupsAlcoholBeers.map((row) => (
+                        <tr key={row.name}>
+                          <td>{row.name}</td>
+                          <td className="price" data-label="Cena">
+                            {row.price}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <h4 className="groups-drinks__subtitle">Wina</h4>
+                <div className="table-scroll-wrap">
+                  <table className="price-table groups-drinks__table data-table--cards">
+                    <tbody>
+                      {groupsAlcoholWines.map((row) => (
                         <tr key={row.name}>
                           <td>{row.name}</td>
                           <td className="price" data-label="Cena">
